@@ -280,7 +280,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/03/博客/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/03/DOM/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="smilemm">
@@ -299,7 +299,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/03/博客/" itemprop="url">博客</a></h1>
+                <a class="post-title-link" href="/2017/08/03/DOM/" itemprop="url">DOM</a></h1>
         
 
         <div class="post-meta">
@@ -351,137 +351,126 @@
       
         
           
-            
-          
-        
-      
-    </div>
-    
-    
-    
+            <h2 id="parentNode"><a href="#parentNode" class="headerlink" title="parentNode"></a>parentNode</h2><p>parentNode      父节点<br>寻找定位父级（具有定位属性,并且属性值不为static）<br>如果没有定位父级,则找到body<br>offsetLeft/offsetTop</p>
+<p>offsetLeft/offsetTop就是到定位父级节点的距离。<br>node.getBoundingClientRect()</p>
+<p>返回值是一个对象，包含了元素盒模型的详细信息(可视大小)；<br>取对象中详细的属性值(相对于浏览器可视区域)</p>
+<p>left    元素左侧距离可视区左侧的距离<br>top     元素顶部距离可视区顶部的距离<br>right   元素右侧距离可视区左侧的距离<br>bottom  元素底部距离可视区顶部的距离<br>whith   元素的可视宽度<br>height  元素的可视高度<br>自定义属性</p>
+<p><div id="box" class="div1" index="12"></div></p>
+<script>
+    var box = document.getElementById("box");
+    console.log( box.className );//div1
+    console.log( box[ "className" ] );//div1
+    box.onoff = true;//通过js添加的自定义属性
 
-    
+    console.log( box.onoff );//true
+    console.log( box.index );//undefined
+     .和[]不能获取元素身上的自定义属性
+</script>
+属性操作的三种方法
 
-    
+node.getAttribute( attr )//获取元素身上的指定属性名的属性值
 
-    
+<div id="box" class="div1" index="12"></div>
+<script>
+    var box = document.getElementById("box");
+    box.onoff = true;//通过js设置元素的自定义属性
 
-    <footer class="post-footer">
-      
+    console.log( box.index );//undefined
+  .和[]不能获取元素身上的自定义属性
 
-      
+    console.log( box.getAttribute( "index" ) );
+    //元素身上的自定义属性通过box.getAttribute(属性名)来获取
 
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
+    console.log( box.getAttribute( "onoff" ) );//null
+</script>
 
 
-    
-      
+<p>node.setAttribute(attr,value)//设置元素指定属性名的属性值</p>
+<p>node.removeAttribute(attr) //删除元素指定属性</p>
+<p>特点：</p>
+<pre><code>可以操作行间自定义的属性
+可以获取src 和 herf 等的相对
+</code></pre><p>注意：</p>
+<pre><code>尽量不要使用或者减少使用dom的操作，性能不太好；
+</code></pre><p>创建元素</p>
+<p>document.createElement(“div”)  在文档中创建元素（div）<br>//元素创建完不添加到页面中，是看不到添加的内容</p>
+<p>注意：<br>    给创建出来的元素加class名字要加上className<br>appendChild</p>
+<p>parentNode.appendChild(childNode)</p>
+<p>往一个节点里边添加一个子节点，注意是添加在最后<br>    parentNode:父节点（需要把节点放入哪个容器的内部）<br>    childNode:子节点（需要放的节点）</p>
+<pre><code> //往box中添加tempDiv;
+box.appendChild( tempDiv );
+</code></pre><p>如果操作的是一个已经存在的页面中的元素，会把元素从原来的父级下直接剪切过来<br>insertBefore</p>
+<p>parentNode.insertBefore(childNode1,childNode2)<br>往一个节点的指定子节点前边插入一个节点</p>
+<pre><code>childNode1插入到childNode2前边；
+    如果第二个参数没有，会报错
 
-  
+    如果第二个参数是null,相当于appendChild
+</code></pre><p>例：<br>    box.insertBefore(span,p)//把span放在p前面</p>
+<pre><code>/第二个参数不写,报错
+box.insertBefore( span );//报错
+</code></pre><p>第二个参数为null,相当于appendChild<br>    box.insertBefore( span,null );//相当于appendChild<br>    box.insertBefore( span,undefined );//相当于appendChild<br>Dom操作innerHTML操作生成方式</p>
+<p>var box = document.getElementById(“box”);</p>
+<pre><code>var span = document.createElement(&quot;span&quot;);
 
-  
-  
-  
+box.innerHTML = span;//此处span是一个元素节点，但是innerHTML右边只能是字符串，所以会出问题
+</code></pre><p>removeChild 删除指定的节点</p>
+<p>parentNode.removeChild(childNodes)</p>
+<pre><code>从一个节点中删除指定的子节点。
+注意：返回值是你删除的节点
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/02/ECMAScript6/">
+var box = document.getElementById(&quot;box&quot;);
+var span = document.getElementById(&quot;span&quot;);
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="smilemm">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
+document.onclick = function(){
+    var del = box.removeChild( span );
+    console.log( del );
+}
+</code></pre><p>replaceChild</p>
+<p>parentNode.replaceChild(node,childNode)<br>    node用来替换的节点，childNodes被替换的子节点<br>    两个参数都必须写。</p>
+<p><div id="box">我是老王家的div</div></p>
+<p><div id="baoqian"></div></p>
+<p><div id="son">我是baoqian的孩子</div><br></p>
+<script>
+    var box = document.getElementById("box");
+    var baoqian = document.getElementById("baoqian");
+    var son = document.getElementById("son");
+    //使用 box 替换baoqian中的 son
+    baoqian.replaceChild( box,son );
+</script>
+cloneNode
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="smilemm的博客">
-    </span>
+node.cloneNode(boolean)
 
-    
-      <header class="post-header">
+    克隆一个节点
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/02/ECMAScript6/" itemprop="url">jkjkjkjk</a></h1>
-        
+    boolean:
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-02T18:56:22+08:00">
-                2017-08-02
-              </time>
-            
+        是否进行深度克隆
 
-            
+        true：克隆元素和元素包含的子孙节点
 
-            
-          </span>
+        flase：克隆元素但不包含元素的子孙节点
+    注意：
 
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="ECMAScript-6是什么"><a href="#ECMAScript-6是什么" class="headerlink" title="ECMAScript 6是什么"></a>ECMAScript 6是什么</h1><pre><code>- ECMAScript 6 也称为ECMAScript2015，是2015年出版的ECMAScript新的版本。ES6是继ES5之后的一次主要改进。
-</code></pre><h1 id="ECMAScript-6-特点"><a href="#ECMAScript-6-特点" class="headerlink" title="ECMAScript 6 特点"></a>ECMAScript 6 特点</h1><pre><code>- ES6增添了许多必要的特性，例如模块和类，块级作用域，常量与变量。
-</code></pre><h1 id="var回顾"><a href="#var回顾" class="headerlink" title="var回顾"></a>var回顾</h1><pre><code>- 声明变量
-- var 声明的变量由函数划分作用域
-</code></pre><h1 id="什么是let"><a href="#什么是let" class="headerlink" title="什么是let"></a>什么是let</h1><pre><code>- ECMA6中新增的关键字，用于声明变量
-</code></pre><h1 id="let的特点"><a href="#let的特点" class="headerlink" title="let的特点"></a>let的特点</h1><pre><code>- let  声明的变量由代码块划分作用域
-- 注意：重复声明会报错
-</code></pre><h1 id="暂存死区"><a href="#暂存死区" class="headerlink" title="暂存死区"></a>暂存死区</h1><pre><code>- 从块的开始到声明这段的区域
-</code></pre><h1 id="什么是块级作用域"><a href="#什么是块级作用域" class="headerlink" title="什么是块级作用域"></a>什么是块级作用域</h1><pre><code>- 一对{}包括的区域称为代码块
-- 块级作用域指一个变量或者函数只在该区域才起作用。
-</code></pre><h1 id="如何形成块级作用域"><a href="#如何形成块级作用域" class="headerlink" title="如何形成块级作用域"></a>如何形成块级作用域</h1><pre><code>- 使用let关键字在代码块中声明的变量，只能在该代码块及子级作用域起作用
-</code></pre>
+        克隆的时候会把节点的id也克隆下来，所以要注意单独设置节点的id
+<div id="box" class="div1">
+    <!--注释-->
+    我是box
+    <p>
+        <span>span</span>
+    </p>
+</div>
+<div id="wrap"></div>
+<script>
+    var box = document.getElementById("box");
+    var wrap = document.getElementById("wrap");
+    box.onclick = function(){
+        alert(1);
+    }
+    var clone = box.cloneNode(true);
+    clone.id = "cloneBox"
+    wrap.appendChild( clone );
+</script>
           
         
       
@@ -548,7 +537,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/02/nodejs/" itemprop="url">20170802-node</a></h1>
+                <a class="post-title-link" href="/2017/08/02/nodejs/" itemprop="url">node.js</a></h1>
         
 
         <div class="post-meta">
@@ -703,7 +692,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/02/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/01/ECMAScript6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="smilemm">
@@ -722,7 +711,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/02/hello-world/" itemprop="url">Hello World</a></h1>
+                <a class="post-title-link" href="/2017/08/01/ECMAScript6/" itemprop="url">ECMAScript6</a></h1>
         
 
         <div class="post-meta">
@@ -734,8 +723,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-02T18:03:19+08:00">
-                2017-08-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-01T18:56:22+08:00">
+                2017-08-01
               </time>
             
 
@@ -774,16 +763,263 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+            <h1 id="ECMAScript-6是什么"><a href="#ECMAScript-6是什么" class="headerlink" title="ECMAScript 6是什么"></a>ECMAScript 6是什么</h1><pre><code>- ECMAScript 6 也称为ECMAScript2015，是2015年出版的ECMAScript新的版本。ES6是继ES5之后的一次主要改进。
+</code></pre><h1 id="ECMAScript-6-特点"><a href="#ECMAScript-6-特点" class="headerlink" title="ECMAScript 6 特点"></a>ECMAScript 6 特点</h1><pre><code>- ES6增添了许多必要的特性，例如模块和类，块级作用域，常量与变量。
+</code></pre><h1 id="var回顾"><a href="#var回顾" class="headerlink" title="var回顾"></a>var回顾</h1><pre><code>- 声明变量
+- var 声明的变量由函数划分作用域
+</code></pre><h1 id="什么是let"><a href="#什么是let" class="headerlink" title="什么是let"></a>什么是let</h1><pre><code>- ECMA6中新增的关键字，用于声明变量
+</code></pre><h1 id="let的特点"><a href="#let的特点" class="headerlink" title="let的特点"></a>let的特点</h1><pre><code>- let  声明的变量由代码块划分作用域
+- 注意：重复声明会报错
+</code></pre><h1 id="暂存死区"><a href="#暂存死区" class="headerlink" title="暂存死区"></a>暂存死区</h1><pre><code>- 从块的开始到声明这段的区域
+</code></pre><h1 id="什么是块级作用域"><a href="#什么是块级作用域" class="headerlink" title="什么是块级作用域"></a>什么是块级作用域</h1><pre><code>- 一对{}包括的区域称为代码块
+- 块级作用域指一个变量或者函数只在该区域才起作用。
+</code></pre><h1 id="如何形成块级作用域"><a href="#如何形成块级作用域" class="headerlink" title="如何形成块级作用域"></a>如何形成块级作用域</h1><pre><code>- 使用let关键字在代码块中声明的变量，只能在该代码块及子级作用域起作用
+</code></pre><h1 id="什么是常量"><a href="#什么是常量" class="headerlink" title="什么是常量"></a>什么是常量</h1><pre><code>在定义之后值是固定不变的，即为常量
+</code></pre><h1 id="变量和常量的区别"><a href="#变量和常量的区别" class="headerlink" title="变量和常量的区别"></a>变量和常量的区别</h1><pre><code>变量在定义之后可以修改值，常量不可以。
 
+const作用
+
+    用来声明常量
+    注意：重复声明会报错。
+</code></pre><h1 id="什么是解构赋值"><a href="#什么是解构赋值" class="headerlink" title="什么是解构赋值"></a>什么是解构赋值</h1><pre><code>ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。
+</code></pre><h1 id="数组的解构赋值语法"><a href="#数组的解构赋值语法" class="headerlink" title="数组的解构赋值语法"></a>数组的解构赋值语法</h1><pre><code>var [a, b, c] = [1, 2, 3];
+</code></pre><h1 id="对象的解构赋值语法"><a href="#对象的解构赋值语法" class="headerlink" title="对象的解构赋值语法"></a>对象的解构赋值语法</h1><p>var { foo, bar } = { foo: “aaa”, bar: “bbb” };</p>
+<h1 id="解构赋值的作用"><a href="#解构赋值的作用" class="headerlink" title="解构赋值的作用"></a>解构赋值的作用</h1><p>函数只能返回一个值，如果要返回多个值，只能将它们放在数组或对象里返回。有了解构赋值，取出这些值就非常方便。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/20/逻辑运算符/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="smilemm">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="smilemm的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/20/逻辑运算符/" itemprop="url">运算符</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-20T21:47:40+08:00">
+                2017-06-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>算术运算符</p>
+<p>加+、- 减、* 乘、/ 除、% 取模（求余数）、++、–<br>加号除了有算术运算的功能还有字符串拼接的功能</p>
+<p>只有当两边都是数字的时候才会进行算术运算</p>
+<p>只要又一边是字符串，那么就会把不是字符串的那边转换成字符串，然后进行拼接</p>
+<p>++和–<br>前置和后置的区别</p>
+<pre><code>alert( 1+1 );//2        alert( 6/3 );//2    alert( 12%7 );//5
+
+var i= 0；
+i++;
+相当于： i= i+ 1；
+alert(i)//0
+alert(i++);//0
+++后置先使用，在增加
+
+var i = 0;
+var c = i++;        alert( c );//0        alert( i );//1
+
+var i = 0;
+var c = ++i;        alert( c );//0        alert( i );//1
+</code></pre><p>赋值运算符</p>
+<p>赋值运算符：</p>
+<pre><code>=、+=、-=、*=、/=、%=
+a+=b 相当于 a = a + b
+a = a + b可以简写成 a += b
+注意 a = b + a不可以简写成 a += b
+
+-=、*=、/=、%=的特性和+=一样
+
+var i = 4;
+        i += 3;
+        相当于：
+        i = i + 3;
+        alert( i );
+</code></pre><p>关系运算符</p>
+<p>&lt;、&gt;、&lt;=、&gt;=、==、!=、===、!==<br>注意：返回值都是一个布尔值</p>
+<p> alert( 1&lt;3 )//true<br>    &lt;<br>如果左边小于右边则返回true,否则返回false</p>
+<p>alert( 1&lt;1 )//false<br>alert( 1&lt;=1 )//true<br>            &lt;=<br>如果左边小于或等于右边则返回true,否则返回false</p>
+<p>alert( “1” == “1” );//true</p>
+<h1 id="alert-1-“1”-true"><a href="#alert-1-“1”-true" class="headerlink" title="alert( 1 == “1” );//true"></a>alert( 1 == “1” );//true</h1><p>只会判断左边和右边的值是不是相同，相同则返回true。不判断数据类型是否相同</p>
+<h1 id="alert-1-“1”-false"><a href="#alert-1-“1”-false" class="headerlink" title="alert( 1 === “1” )//false"></a>alert( 1 === “1” )//false</h1><p>要判断值是否相同同时判断类型是否相同，只要有一个不同，就返回false</p>
+<p>alert( “1” !== 1 );//true<br>alert( “1” !== “s” );//true<br>alert( “1” !== “1” );//false<br>            !==<br>只要值或者类型有一个是不同的,就返回true,如果类型和值都相同,则返回false<br>逻辑运算符</p>
+<p>逻辑运算符<br>    &amp;&amp; 与、|| 或、! 否</p>
+<pre><code>&amp;&amp;与（并且）
+    如果左边为真，则返回右边，
+    如果左边为假，则返回左边。
+
+||或（或者）
+    如果左边为真，则返回左边，
+    如果左边为假，则返回右边。
+!否
+    把后面的运算数转成布尔值然后取反
+</code></pre><p>判断a 是否大于1小于5<br>    var a = 3;<br>    if( a&gt;1 &amp;&amp; a&lt;5 ){<br>        alert( “大于1小于5” );<br>    }</p>
+<pre><code>alert( true &amp;&amp; true);//如果左边为真，则返回右边
+alert( true &amp;&amp; 1 );//如果左边为真，则返回右边
+alert( false &amp;&amp; 1 );//如果左边为假，则返回左边
+alert( 0 &amp;&amp; 10 );//如果左边为假，则返回左边
+
+alert( true || 1 );//如果左边为真，则返回左边
+alert( 1 || 2 );//如果左边为真，则返回左边
+alert( false || 2 );//如果左边为假，则返回右边
+alert( false || 0 );//如果左边为假，则返回右边
+alert( 0 || 0 );//如果左边为假，则返回右边
+
+alert( 1&lt;2 || 3&gt;4 );//true
+alert( 1&gt;2 || 3&gt;4 );//false
+
+alert( !0 );//true
+alert( !1 );//false
+alert( !!3 );//true
+</code></pre><p>三目运算符</p>
+<p>判断条件?语句1:语句2<br>    判断条件成立，执行语句1<br>    判断条件不成立，执行语句2</p>
+<pre><code>var a = 1;
+    if( a == 1 ){
+        alert(&quot;是1&quot;);
+    }else{
+        alert( &quot;不是1&quot; );
+    }
+    a == 1 ? alert(&quot;是1&quot;):alert(&quot;不是1&quot;);
+
+
+var onoff = true;
+    var a;
+if( onoff ){
+    a = 1;
+}else{
+    a = 2;
+}
+
+alert( onoff ? 1 : 2 );
+
+    a = onoff ? 1 : 2;
+alert(a);
+
+
+var arr = [1,2,3];
+遍历数组
+    for (var i = 0; i &lt; arr.length; i++) {
+        console.log( arr[i] );
+    }
+
+
+var obj = {
+    &quot;1&quot;:10,
+    &quot;padding-top&quot;: &quot;10px&quot;,//键名不符合变量命名规范的使用引号包起来
+    &quot;name&quot; : &quot;sun&quot;,
+    &quot;age&quot; : 20,
+    &quot;sex&quot; : &quot;female&quot;
+}
+alert( obj.age );
+for( var a in obj ){//使用a 遍历 键名
+    console.log( a );//遍历 键名
+    console.log( obj.a );//相当于查看对象中键名为a的键值
+    console.log( obj[a] );//遍历 键值
+    console.log( a+&quot;:&quot;+obj[a] );
+}
+</code></pre>
           
         
       
@@ -877,7 +1113,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>

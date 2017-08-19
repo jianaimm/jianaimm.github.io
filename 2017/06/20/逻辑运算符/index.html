@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="js,css,ccc," />
+  <meta name="keywords" content="css," />
 
 
 
@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="node1.  语言 2.  程序：代码 + 解析器 下载 &amp;amp; 安装https://nodejs.org  根据操作系统的不同，选择合适安装包 REPL- Read - Eval - Print - Loop Node- 相似     - 与JavaScript类似，是由ECMAScript作为语言基础 - 不同     - 内置对象     - 做事情的目标         - Java">
-<meta name="keywords" content="js,css,ccc">
+<meta name="description" content="算术运算符 加+、- 减、* 乘、/ 除、% 取模（求余数）、++、–加号除了有算术运算的功能还有字符串拼接的功能 只有当两边都是数字的时候才会进行算术运算 只要又一边是字符串，那么就会把不是字符串的那边转换成字符串，然后进行拼接 ++和–前置和后置的区别 alert( 1+1 );//2        alert( 6/3 );//2    alert( 12%7 );//5  var i= 0">
+<meta name="keywords" content="css">
 <meta property="og:type" content="article">
-<meta property="og:title" content="node.js">
-<meta property="og:url" content="http://yoursite.com/2017/08/02/nodejs/index.html">
+<meta property="og:title" content="运算符">
+<meta property="og:url" content="http://yoursite.com/2017/06/20/逻辑运算符/index.html">
 <meta property="og:site_name" content="smilemm的博客">
-<meta property="og:description" content="node1.  语言 2.  程序：代码 + 解析器 下载 &amp;amp; 安装https://nodejs.org  根据操作系统的不同，选择合适安装包 REPL- Read - Eval - Print - Loop Node- 相似     - 与JavaScript类似，是由ECMAScript作为语言基础 - 不同     - 内置对象     - 做事情的目标         - Java">
+<meta property="og:description" content="算术运算符 加+、- 减、* 乘、/ 除、% 取模（求余数）、++、–加号除了有算术运算的功能还有字符串拼接的功能 只有当两边都是数字的时候才会进行算术运算 只要又一边是字符串，那么就会把不是字符串的那边转换成字符串，然后进行拼接 ++和–前置和后置的区别 alert( 1+1 );//2        alert( 6/3 );//2    alert( 12%7 );//5  var i= 0">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-19T15:06:12.000Z">
+<meta property="og:updated_time" content="2017-08-19T15:05:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="node.js">
-<meta name="twitter:description" content="node1.  语言 2.  程序：代码 + 解析器 下载 &amp;amp; 安装https://nodejs.org  根据操作系统的不同，选择合适安装包 REPL- Read - Eval - Print - Loop Node- 相似     - 与JavaScript类似，是由ECMAScript作为语言基础 - 不同     - 内置对象     - 做事情的目标         - Java">
+<meta name="twitter:title" content="运算符">
+<meta name="twitter:description" content="算术运算符 加+、- 减、* 乘、/ 除、% 取模（求余数）、++、–加号除了有算术运算的功能还有字符串拼接的功能 只有当两边都是数字的时候才会进行算术运算 只要又一边是字符串，那么就会把不是字符串的那边转换成字符串，然后进行拼接 ++和–前置和后置的区别 alert( 1+1 );//2        alert( 6/3 );//2    alert( 12%7 );//5  var i= 0">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/02/nodejs/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/06/20/逻辑运算符/"/>
 
 
 
 
 
-  <title>node.js | smilemm的博客</title>
+  <title>运算符 | smilemm的博客</title>
   
 
 
@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/02/nodejs/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/20/逻辑运算符/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="smilemm">
@@ -300,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">node.js</h1>
+          <h1 class="post-title" itemprop="name headline">运算符</h1>
         
 
         <div class="post-meta">
@@ -312,8 +312,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-02T18:38:56+08:00">
-                2017-08-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-20T21:47:40+08:00">
+                2017-06-20
               </time>
             
 
@@ -350,62 +350,122 @@
       
 
       
-        <h1 id="node"><a href="#node" class="headerlink" title="node"></a>node</h1><pre><code>1.  语言
-2.  程序：代码 + 解析器
-</code></pre><h1 id="下载-amp-安装"><a href="#下载-amp-安装" class="headerlink" title="下载 &amp; 安装"></a>下载 &amp; 安装</h1><pre><code>https://nodejs.org
+        <p>算术运算符</p>
+<p>加+、- 减、* 乘、/ 除、% 取模（求余数）、++、–<br>加号除了有算术运算的功能还有字符串拼接的功能</p>
+<p>只有当两边都是数字的时候才会进行算术运算</p>
+<p>只要又一边是字符串，那么就会把不是字符串的那边转换成字符串，然后进行拼接</p>
+<p>++和–<br>前置和后置的区别</p>
+<pre><code>alert( 1+1 );//2        alert( 6/3 );//2    alert( 12%7 );//5
 
-根据操作系统的不同，选择合适安装包
-</code></pre><h1 id="REPL"><a href="#REPL" class="headerlink" title="REPL"></a>REPL</h1><pre><code>- Read
-- Eval
-- Print
-- Loop
-</code></pre><h1 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h1><pre><code>- 相似
-    - 与JavaScript类似，是由ECMAScript作为语言基础
-- 不同
-    - 内置对象
-    - 做事情的目标
-        - JavaScript : 浏览器
-        - Node : 所有（操作系统、网络、数据库、文件、图形）
-</code></pre><ul>
-<li><p>常用命令</p>
-<ul>
-<li><p>windows(key) + r =&gt; 输入cmd =&gt; 回车</p>
-</li>
-<li><p>命令 : 命令 参数 选项</p>
-</li>
-<li><p>cls/clear : 清屏</p>
-</li>
-<li>盘符:（windows only） : 切换盘符</li>
-<li>dir/ls : 显示当前目录（一级）下的所有文件和文件夹</li>
-<li>cd : cd [盘符:]路径</li>
-</ul>
-</li>
-<li><p>注意</p>
-<ul>
-<li>进入命令行界面以后，默认会在当前用户的家目录</li>
-</ul>
-</li>
-</ul>
-<h1 id="Node文件的执行"><a href="#Node文件的执行" class="headerlink" title="Node文件的执行"></a>Node文件的执行</h1><pre><code>- 进入要执行的文件所在目录
-- 输入命令：node 要执行的node文件，如果默认是js，可以省略.js
-</code></pre><h1 id="Modules"><a href="#Modules" class="headerlink" title="Modules"></a>Modules</h1><blockquote>
-<p>在node中，为了更方便组织管理和复用我们的代码，node提供一个模块化的方案</p>
-</blockquote>
-<p>node一共有三种不同的模块方案</p>
-<pre><code>1. Core Modules
-2. File Modules
-3. Folders as Modules
-</code></pre><h1 id="模块加载"><a href="#模块加载" class="headerlink" title="模块加载"></a>模块加载</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">require(&apos;./2.js&apos;);</div><div class="line">require(&apos;./2&apos;);</div></pre></td></tr></table></figure>
-<h1 id="模块数据的访问"><a href="#模块数据的访问" class="headerlink" title="模块数据的访问"></a>模块数据的访问</h1><pre><code>- 全局
-- 导出
-    - module.exports / exports
-</code></pre><h1 id="module"><a href="#module" class="headerlink" title="module"></a>module</h1><p>node中的内置对象，每一个文件（模块）都有一个自己的module对象，在该对象下有很多对于该模块的描述。其中有一个属性 exports，他的值是一个对象，我们可以通过该对象对应提供访问模块内数据，一个模块中module.exports其实就是这个模块对外的访问接口，我们通过require方法加载一个模块，得到的其实就是该模块对外提供的exports对象</p>
-<h1 id="File-Modules"><a href="#File-Modules" class="headerlink" title="File Modules"></a>File Modules</h1><p>node中规定，一个文件就是一个独立的模块，一个独立的模块有自己独立的作用域，其他文件可以通过require方法进行引入，但是不能直接访问模块内的数据</p>
-<h1 id="Folders-as-Modules"><a href="#Folders-as-Modules" class="headerlink" title="Folders as Modules"></a>Folders as Modules</h1><p>文件夹模块是按照某种规定的文件组织格式，组织我们的文件代码，（把多个不同的文件按照某种格式组织成一个大的模块），该模块需要放置在一个叫node_modules的目录中，node_modules目下会存放各种文件夹形式的模块，文件夹模块是以文件夹的形式进行管理和组织的<br>文件夹模块的加载，不能在路径前面写./ ../之类的前缀，换句话，文件夹模块是不需要指定路径，因为他会按照某种规则进行查找，<br>在每个module对象下，都有一个paths的属性，该属性是个数组，他的值就是我们文件夹模块的查找规则/路径</p>
-<h1 id="Core-Modules"><a href="#Core-Modules" class="headerlink" title="Core Modules"></a>Core Modules</h1><p>是node提供的默认模块，包括File,Net,Http等<br>加载方式：require(‘模块名’);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">require(&apos;fs&apos;);</div></pre></td></tr></table></figure></p>
-<h1 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h1><p>node中的一个核心模块，提供了基础事件机制支持，实现了自定义事件机制，我们可以通过使用该模块为我们的模块提供事件</p>
-<h1 id="File-System"><a href="#File-System" class="headerlink" title="File System"></a>File System</h1><p>这个模块是node内置的一个提供了一些对硬盘中文件进行操作的方法</p>
+var i= 0；
+i++;
+相当于： i= i+ 1；
+alert(i)//0
+alert(i++);//0
+++后置先使用，在增加
 
+var i = 0;
+var c = i++;        alert( c );//0        alert( i );//1
+
+var i = 0;
+var c = ++i;        alert( c );//0        alert( i );//1
+</code></pre><p>赋值运算符</p>
+<p>赋值运算符：</p>
+<pre><code>=、+=、-=、*=、/=、%=
+a+=b 相当于 a = a + b
+a = a + b可以简写成 a += b
+注意 a = b + a不可以简写成 a += b
+
+-=、*=、/=、%=的特性和+=一样
+
+var i = 4;
+        i += 3;
+        相当于：
+        i = i + 3;
+        alert( i );
+</code></pre><p>关系运算符</p>
+<p>&lt;、&gt;、&lt;=、&gt;=、==、!=、===、!==<br>注意：返回值都是一个布尔值</p>
+<p> alert( 1&lt;3 )//true<br>    &lt;<br>如果左边小于右边则返回true,否则返回false</p>
+<p>alert( 1&lt;1 )//false<br>alert( 1&lt;=1 )//true<br>            &lt;=<br>如果左边小于或等于右边则返回true,否则返回false</p>
+<p>alert( “1” == “1” );//true</p>
+<h1 id="alert-1-“1”-true"><a href="#alert-1-“1”-true" class="headerlink" title="alert( 1 == “1” );//true"></a>alert( 1 == “1” );//true</h1><p>只会判断左边和右边的值是不是相同，相同则返回true。不判断数据类型是否相同</p>
+<h1 id="alert-1-“1”-false"><a href="#alert-1-“1”-false" class="headerlink" title="alert( 1 === “1” )//false"></a>alert( 1 === “1” )//false</h1><p>要判断值是否相同同时判断类型是否相同，只要有一个不同，就返回false</p>
+<p>alert( “1” !== 1 );//true<br>alert( “1” !== “s” );//true<br>alert( “1” !== “1” );//false<br>            !==<br>只要值或者类型有一个是不同的,就返回true,如果类型和值都相同,则返回false<br>逻辑运算符</p>
+<p>逻辑运算符<br>    &amp;&amp; 与、|| 或、! 否</p>
+<pre><code>&amp;&amp;与（并且）
+    如果左边为真，则返回右边，
+    如果左边为假，则返回左边。
+
+||或（或者）
+    如果左边为真，则返回左边，
+    如果左边为假，则返回右边。
+!否
+    把后面的运算数转成布尔值然后取反
+</code></pre><p>判断a 是否大于1小于5<br>    var a = 3;<br>    if( a&gt;1 &amp;&amp; a&lt;5 ){<br>        alert( “大于1小于5” );<br>    }</p>
+<pre><code>alert( true &amp;&amp; true);//如果左边为真，则返回右边
+alert( true &amp;&amp; 1 );//如果左边为真，则返回右边
+alert( false &amp;&amp; 1 );//如果左边为假，则返回左边
+alert( 0 &amp;&amp; 10 );//如果左边为假，则返回左边
+
+alert( true || 1 );//如果左边为真，则返回左边
+alert( 1 || 2 );//如果左边为真，则返回左边
+alert( false || 2 );//如果左边为假，则返回右边
+alert( false || 0 );//如果左边为假，则返回右边
+alert( 0 || 0 );//如果左边为假，则返回右边
+
+alert( 1&lt;2 || 3&gt;4 );//true
+alert( 1&gt;2 || 3&gt;4 );//false
+
+alert( !0 );//true
+alert( !1 );//false
+alert( !!3 );//true
+</code></pre><p>三目运算符</p>
+<p>判断条件?语句1:语句2<br>    判断条件成立，执行语句1<br>    判断条件不成立，执行语句2</p>
+<pre><code>var a = 1;
+    if( a == 1 ){
+        alert(&quot;是1&quot;);
+    }else{
+        alert( &quot;不是1&quot; );
+    }
+    a == 1 ? alert(&quot;是1&quot;):alert(&quot;不是1&quot;);
+
+
+var onoff = true;
+    var a;
+if( onoff ){
+    a = 1;
+}else{
+    a = 2;
+}
+
+alert( onoff ? 1 : 2 );
+
+    a = onoff ? 1 : 2;
+alert(a);
+
+
+var arr = [1,2,3];
+遍历数组
+    for (var i = 0; i &lt; arr.length; i++) {
+        console.log( arr[i] );
+    }
+
+
+var obj = {
+    &quot;1&quot;:10,
+    &quot;padding-top&quot;: &quot;10px&quot;,//键名不符合变量命名规范的使用引号包起来
+    &quot;name&quot; : &quot;sun&quot;,
+    &quot;age&quot; : 20,
+    &quot;sex&quot; : &quot;female&quot;
+}
+alert( obj.age );
+for( var a in obj ){//使用a 遍历 键名
+    console.log( a );//遍历 键名
+    console.log( obj.a );//相当于查看对象中键名为a的键值
+    console.log( obj[a] );//遍历 键值
+    console.log( a+&quot;:&quot;+obj[a] );
+}
+</code></pre>
       
     </div>
     
@@ -422,11 +482,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/js/" rel="tag"># js</a>
-          
             <a href="/tags/css/" rel="tag"># css</a>
-          
-            <a href="/tags/ccc/" rel="tag"># ccc</a>
           
         </div>
       
@@ -439,18 +495,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/01/ECMAScript6/" rel="next" title="ECMAScript6">
-                <i class="fa fa-chevron-left"></i> ECMAScript6
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/03/DOM/" rel="prev" title="DOM">
-                DOM <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/01/ECMAScript6/" rel="prev" title="ECMAScript6">
+                ECMAScript6 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -576,7 +628,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#node"><span class="nav-number">1.</span> <span class="nav-text">node</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#下载-amp-安装"><span class="nav-number">2.</span> <span class="nav-text">下载 & 安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#REPL"><span class="nav-number">3.</span> <span class="nav-text">REPL</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Node"><span class="nav-number">4.</span> <span class="nav-text">Node</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Node文件的执行"><span class="nav-number">5.</span> <span class="nav-text">Node文件的执行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Modules"><span class="nav-number">6.</span> <span class="nav-text">Modules</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模块加载"><span class="nav-number">7.</span> <span class="nav-text">模块加载</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模块数据的访问"><span class="nav-number">8.</span> <span class="nav-text">模块数据的访问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#module"><span class="nav-number">9.</span> <span class="nav-text">module</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#File-Modules"><span class="nav-number">10.</span> <span class="nav-text">File Modules</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Folders-as-Modules"><span class="nav-number">11.</span> <span class="nav-text">Folders as Modules</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Core-Modules"><span class="nav-number">12.</span> <span class="nav-text">Core Modules</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Events"><span class="nav-number">13.</span> <span class="nav-text">Events</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#File-System"><span class="nav-number">14.</span> <span class="nav-text">File System</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#alert-1-“1”-true"><span class="nav-number">1.</span> <span class="nav-text">alert( 1 == “1” );//true</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#alert-1-“1”-false"><span class="nav-number">2.</span> <span class="nav-text">alert( 1 === “1” )//false</span></a></li></ol></div>
             
 
           </div>
