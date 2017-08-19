@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="es6,js,ECMAScript" />
 
 
 
@@ -95,13 +95,14 @@
 
 
 <meta name="description" content="ECMAScript 6是什么- ECMAScript 6 也称为ECMAScript2015，是2015年出版的ECMAScript新的版本。ES6是继ES5之后的一次主要改进。 ECMAScript 6 特点- ES6增添了许多必要的特性，例如模块和类，块级作用域，常量与变量。 var回顾- 声明变量 - var 声明的变量由函数划分作用域 什么是let- ECMA6中新增的关键字，用于声明变">
+<meta name="keywords" content="es6,js,ECMAScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ECMAScript6">
 <meta property="og:url" content="http://yoursite.com/2017/08/01/ECMAScript6/index.html">
 <meta property="og:site_name" content="smilemm的博客">
 <meta property="og:description" content="ECMAScript 6是什么- ECMAScript 6 也称为ECMAScript2015，是2015年出版的ECMAScript新的版本。ES6是继ES5之后的一次主要改进。 ECMAScript 6 特点- ES6增添了许多必要的特性，例如模块和类，块级作用域，常量与变量。 var回顾- 声明变量 - var 声明的变量由函数划分作用域 什么是let- ECMA6中新增的关键字，用于声明变">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-19T15:06:41.000Z">
+<meta property="og:updated_time" content="2017-08-19T15:35:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECMAScript6">
 <meta name="twitter:description" content="ECMAScript 6是什么- ECMAScript 6 也称为ECMAScript2015，是2015年出版的ECMAScript新的版本。ES6是继ES5之后的一次主要改进。 ECMAScript 6 特点- ES6增添了许多必要的特性，例如模块和类，块级作用域，常量与变量。 var回顾- 声明变量 - var 声明的变量由函数划分作用域 什么是let- ECMA6中新增的关键字，用于声明变">
@@ -322,6 +323,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Blog/" itemprop="url" rel="index">
+                    <span itemprop="name">Blog</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -368,9 +391,20 @@ const作用
     用来声明常量
     注意：重复声明会报错。
 </code></pre><h1 id="什么是解构赋值"><a href="#什么是解构赋值" class="headerlink" title="什么是解构赋值"></a>什么是解构赋值</h1><pre><code>ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。
-</code></pre><h1 id="数组的解构赋值语法"><a href="#数组的解构赋值语法" class="headerlink" title="数组的解构赋值语法"></a>数组的解构赋值语法</h1><pre><code>var [a, b, c] = [1, 2, 3];
-</code></pre><h1 id="对象的解构赋值语法"><a href="#对象的解构赋值语法" class="headerlink" title="对象的解构赋值语法"></a>对象的解构赋值语法</h1><p>var { foo, bar } = { foo: “aaa”, bar: “bbb” };</p>
+</code></pre><h1 id="数组的解构赋值语法"><a href="#数组的解构赋值语法" class="headerlink" title="数组的解构赋值语法"></a>数组的解构赋值语法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var [a, b, c] = [1, 2, 3];</div></pre></td></tr></table></figure>
+<h1 id="对象的解构赋值语法"><a href="#对象的解构赋值语法" class="headerlink" title="对象的解构赋值语法"></a>对象的解构赋值语法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var &#123; foo, bar &#125; = &#123; foo: &quot;aaa&quot;, bar: &quot;bbb&quot; &#125;;</div></pre></td></tr></table></figure>
 <h1 id="解构赋值的作用"><a href="#解构赋值的作用" class="headerlink" title="解构赋值的作用"></a>解构赋值的作用</h1><p>函数只能返回一个值，如果要返回多个值，只能将它们放在数组或对象里返回。有了解构赋值，取出这些值就非常方便。</p>
+<h2 id="map"><a href="#map" class="headerlink" title="map"></a>map</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">作用：</div><div class="line">    循环遍历数组元素，根据一个已有数组创建新数组</div><div class="line"></div><div class="line">返回值：</div><div class="line">    arr新数组</div><div class="line"></div><div class="line">    不改变原数组</div><div class="line"></div><div class="line">    var arr = [1,2,3,4,5]</div><div class="line">    var res = arr.map( function(item,index,a)&#123;</div><div class="line">		console.log( 1 );</div><div class="line">		console.log( item );//当前遍历的这一项 1，2,3,4,5</div><div class="line">		console.log( index );//当前项的索引值 0,1,2,3,4</div><div class="line">		return item * 2;//遍历当前项返回出的结果 2,4,6,8,10</div><div class="line">		console.log(a);</div><div class="line">		return 1;</div><div class="line">	&#125; )</div><div class="line">	console.log( arr );//不会改变原数组的内容</div><div class="line">	console.log( res );</div></pre></td></tr></table></figure>
+<h2 id="arr-filter"><a href="#arr-filter" class="headerlink" title="arr.filter"></a>arr.filter</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">作用：</div><div class="line">    循环遍历数组元素，根据一个已有数组创建新数组，如果回调函数返回true，保留当前循环的原始值到新数组，如果返回false，则丢弃当前循环的原始值</div><div class="line"></div><div class="line">目的：</div><div class="line">    创建新数组</div><div class="line">返回值</div><div class="line">    arr 新数组(不改变原数组)</div><div class="line"></div><div class="line">    var arr = [1,2,3,4,5]</div><div class="line">    var res = []</div><div class="line">	for( var i = 0; i &lt; arr.length;i++)&#123;</div><div class="line">		if( arr[i] &gt; 3)&#123;</div><div class="line">			res.push(arr[i]);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	console.log( res );//4,5</div><div class="line"></div><div class="line">	var res = arr.filter( function(item,index)&#123;</div><div class="line">		console.log( item,index );</div><div class="line">		return false</div><div class="line">		if( item&gt;3 )&#123;//过滤出值大于3的项存进数组</div><div class="line">			return true</div><div class="line">		&#125;//4,5</div><div class="line">		if( index&lt;3 )&#123;//过滤出索引值小于3的存进数组</div><div class="line">			return true</div><div class="line">		&#125;//5</div><div class="line">		if( index%2 == 0 )&#123;//1,3,5</div><div class="line">			return true</div><div class="line"> 		&#125;</div><div class="line">	&#125; )</div></pre></td></tr></table></figure>
+<h2 id="扩展运算符"><a href="#扩展运算符" class="headerlink" title="扩展运算符"></a>扩展运算符</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function plus( a, b)&#123;</div><div class="line">	return a+b;</div><div class="line">&#125;</div><div class="line">console.log( plus(1,2) );//3</div><div class="line">console.log( plus( [1,2] ) )//1,2undefined</div><div class="line">console.log(plus( [1,2,3,4] ) )//1,2,3,4undefined</div><div class="line">console.log(...[1,2,3,4]  )//1,2,3,4</div><div class="line">console.log( 1,2,3,4 )//1,2,3,4</div><div class="line">console.log( plus( ...[1,2,3,4] ) );//3</div><div class="line"></div><div class="line">console.log(  1,[2,3],4,5);//1[2,3],4,5</div><div class="line">console.log( 1,...[2,3],4,5 );//1,2,3,4,5</div><div class="line">console.log( ...document.getElementsByTagName(&quot;div&quot;) )//&lt;div&gt;&lt;/div&gt; &lt;div&gt;&lt;/div&gt; &lt;div&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function plus()&#123;</div><div class="line">	var res = 0;</div><div class="line">	for (var i = 0; i &lt; arguments.length; i++) &#123;</div><div class="line">		res += arguments[i]</div><div class="line">	&#125;</div><div class="line">	return res</div><div class="line">&#125;</div><div class="line">console.log( plus(1,2,3,4,5));</div><div class="line">var arr = [1,2,3,4,5,6,8,9];</div><div class="line">console.log( plus(...arr) );</div><div class="line">console.log( plus(1,5,8,9,7,3) )</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//	扩展运算符后面还可以放置表达式。</div><div class="line">    console.log( 1,2,3,...(false?[&apos;4&apos;]:[&quot;5&quot;]) );</div><div class="line"></div><div class="line">//  如果扩展运算符后面是一个空数组，则不产生任何效果。</div><div class="line">	console.log( 1,2,3,...[] );</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3,4,5];</div><div class="line"></div><div class="line">	console.log( Math.min( 1,23,5 ) );//1</div><div class="line">	console.log( Math.max( 1,23,5 ) );//23</div><div class="line"></div><div class="line">	console.log( Math.min( ...arr ) );//1</div><div class="line">	console.log( Math.max( ...arr ) );//5</div><div class="line"></div><div class="line">	//把arr中 大于3的值当中最小的打印出来</div><div class="line">	var arr = [1,23,35,2,3,7];</div><div class="line">	var res = arr.filter(function(item)&#123;</div><div class="line">		return item &gt; 3 ? true : false;</div><div class="line">	&#125;)</div><div class="line">	console.log( res );//23,35,7</div><div class="line">	console.log( Math.min( ...res ) );//7</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3,4,5];</div><div class="line">	var addArr = [6,7,8,9,10];</div><div class="line">	arr.push( [6,7] );</div><div class="line">	console.log( arr );//1,2,3,4,5,6,7</div><div class="line"></div><div class="line">	console.log( [...arr,...addArr] );//1,2,3,4,5,6,7,8,9,10</div><div class="line"></div><div class="line">	var str = &quot;miaovketang&quot;;</div><div class="line">	console.log( ...str );//m i a o v k e t a n g</div></pre></td></tr></table></figure>
+<h2 id="Array-from"><a href="#Array-from" class="headerlink" title="Array.from"></a>Array.from</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var divs = document.getElementsByTagName(&quot;div&quot;);</div><div class="line">  console.log( divs );</div><div class="line">	divs.push( 1 );</div><div class="line">	console.log( divs );//类数组没有数组方法</div><div class="line"></div><div class="line">	var res = Array.from( divs );</div><div class="line">	res.push( 1 );//此时res就是真正的数组，具备数组方法</div><div class="line">	console.log( divs );//不改变原数据divs</div><div class="line">	console.log( res );</div></pre></td></tr></table></figure>
+<h2 id="Array-of"><a href="#Array-of" class="headerlink" title="Array.of"></a>Array.of</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3];</div><div class="line">	console.log( arr );</div><div class="line"></div><div class="line">	var arr = new Array();//[]</div><div class="line">//	var arr = new Array(10);//只传入一个参数，是创建的数组的长度  [10]</div><div class="line"></div><div class="line">//	var arr = new Array(10,20,30);//传入多个参数，会把参数当做数组中的每一项处理  []10,20,30]</div><div class="line"></div><div class="line">//	var arr = Array.of();//[]</div><div class="line"></div><div class="line">	var arr = Array.of(10);//[10]</div><div class="line"></div><div class="line">	var arr = Array.of(10,20);//[10,20]</div><div class="line"></div><div class="line">	console.log( arr );</div></pre></td></tr></table></figure>
+<h2 id="arr-find"><a href="#arr-find" class="headerlink" title="arr.find"></a>arr.find</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3,4,5];</div><div class="line">    var res = arr.find(function(item,index)&#123;</div><div class="line">    	if( item == 3 )&#123;</div><div class="line">    		return true;</div><div class="line">    	&#125;</div><div class="line">  //	return true</div><div class="line">    &#125;)</div><div class="line">  console.log( arr );//不改变原数组</div><div class="line">    console.log( res );//3</div></pre></td></tr></table></figure>
+<h2 id="arr-findIndex"><a href="#arr-findIndex" class="headerlink" title="arr.findIndex"></a>arr.findIndex</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">返回值： 索引值</div><div class="line">var arr = [1,2,3,&quot;a&quot;,4,5];</div><div class="line">    var res = arr.findIndex(function(item)&#123;</div><div class="line">    	if( item == &quot;a&quot; )&#123;</div><div class="line">    		return true;</div><div class="line">    	&#125;</div><div class="line">//  	return true</div><div class="line">    &#125;)</div><div class="line">//  console.log( arr );//不改变原数组</div><div class="line">    console.log( res );//3</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -386,6 +420,12 @@ const作用
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+        </div>
+      
 
       
       
@@ -395,8 +435,8 @@ const作用
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/20/逻辑运算符/" rel="next" title="运算符">
-                <i class="fa fa-chevron-left"></i> 运算符
+              <a href="/2017/07/21/定时器/" rel="next" title="定时器">
+                <i class="fa fa-chevron-left"></i> 定时器
               </a>
             
           </div>
@@ -484,12 +524,21 @@ const作用
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
           
 
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
           
 
           
@@ -497,7 +546,7 @@ const作用
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
@@ -532,7 +581,7 @@ const作用
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ECMAScript-6是什么"><span class="nav-number">1.</span> <span class="nav-text">ECMAScript 6是什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ECMAScript-6-特点"><span class="nav-number">2.</span> <span class="nav-text">ECMAScript 6 特点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#var回顾"><span class="nav-number">3.</span> <span class="nav-text">var回顾</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是let"><span class="nav-number">4.</span> <span class="nav-text">什么是let</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#let的特点"><span class="nav-number">5.</span> <span class="nav-text">let的特点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#暂存死区"><span class="nav-number">6.</span> <span class="nav-text">暂存死区</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是块级作用域"><span class="nav-number">7.</span> <span class="nav-text">什么是块级作用域</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何形成块级作用域"><span class="nav-number">8.</span> <span class="nav-text">如何形成块级作用域</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是常量"><span class="nav-number">9.</span> <span class="nav-text">什么是常量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#变量和常量的区别"><span class="nav-number">10.</span> <span class="nav-text">变量和常量的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是解构赋值"><span class="nav-number">11.</span> <span class="nav-text">什么是解构赋值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组的解构赋值语法"><span class="nav-number">12.</span> <span class="nav-text">数组的解构赋值语法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对象的解构赋值语法"><span class="nav-number">13.</span> <span class="nav-text">对象的解构赋值语法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解构赋值的作用"><span class="nav-number">14.</span> <span class="nav-text">解构赋值的作用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ECMAScript-6是什么"><span class="nav-number">1.</span> <span class="nav-text">ECMAScript 6是什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ECMAScript-6-特点"><span class="nav-number">2.</span> <span class="nav-text">ECMAScript 6 特点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#var回顾"><span class="nav-number">3.</span> <span class="nav-text">var回顾</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是let"><span class="nav-number">4.</span> <span class="nav-text">什么是let</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#let的特点"><span class="nav-number">5.</span> <span class="nav-text">let的特点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#暂存死区"><span class="nav-number">6.</span> <span class="nav-text">暂存死区</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是块级作用域"><span class="nav-number">7.</span> <span class="nav-text">什么是块级作用域</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何形成块级作用域"><span class="nav-number">8.</span> <span class="nav-text">如何形成块级作用域</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是常量"><span class="nav-number">9.</span> <span class="nav-text">什么是常量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#变量和常量的区别"><span class="nav-number">10.</span> <span class="nav-text">变量和常量的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是解构赋值"><span class="nav-number">11.</span> <span class="nav-text">什么是解构赋值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组的解构赋值语法"><span class="nav-number">12.</span> <span class="nav-text">数组的解构赋值语法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对象的解构赋值语法"><span class="nav-number">13.</span> <span class="nav-text">对象的解构赋值语法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解构赋值的作用"><span class="nav-number">14.</span> <span class="nav-text">解构赋值的作用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#map"><span class="nav-number">14.1.</span> <span class="nav-text">map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#arr-filter"><span class="nav-number">14.2.</span> <span class="nav-text">arr.filter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展运算符"><span class="nav-number">14.3.</span> <span class="nav-text">扩展运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Array-from"><span class="nav-number">14.4.</span> <span class="nav-text">Array.from</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Array-of"><span class="nav-number">14.5.</span> <span class="nav-text">Array.of</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#arr-find"><span class="nav-number">14.6.</span> <span class="nav-text">arr.find</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#arr-findIndex"><span class="nav-number">14.7.</span> <span class="nav-text">arr.findIndex</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Math,arr,js" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Math.ceil123456789101112作用	对数进行向上取整语法	number Math.ceil(x)参数	x	一个数字返回值	返回x向上取整后的值.     console.log( Math.ceil( 2.3 ) );//3     console.log( Math.ceil( 2.0 ) );//2     console.log( Math.ceil( -2.1 ) );/">
+<meta name="keywords" content="Math,arr,js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Math &amp;&amp; Arr">
+<meta property="og:url" content="http://yoursite.com/2017/08/19/Math/index.html">
+<meta property="og:site_name" content="smilemm的博客">
+<meta property="og:description" content="Math.ceil123456789101112作用	对数进行向上取整语法	number Math.ceil(x)参数	x	一个数字返回值	返回x向上取整后的值.     console.log( Math.ceil( 2.3 ) );//3     console.log( Math.ceil( 2.0 ) );//2     console.log( Math.ceil( -2.1 ) );/">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-08-19T15:37:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Math &amp;&amp; Arr">
+<meta name="twitter:description" content="Math.ceil123456789101112作用	对数进行向上取整语法	number Math.ceil(x)参数	x	一个数字返回值	返回x向上取整后的值.     console.log( Math.ceil( 2.3 ) );//3     console.log( Math.ceil( 2.0 ) );//2     console.log( Math.ceil( -2.1 ) );/">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/08/19/Math/"/>
+
+
+
+
+
+  <title>Math && Arr | smilemm的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">smilemm的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/19/Math/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="smilemm">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="smilemm的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Math && Arr</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-19T23:36:30+08:00">
+                2017-08-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Blog/" itemprop="url" rel="index">
+                    <span itemprop="name">Blog</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Math-ceil"><a href="#Math-ceil" class="headerlink" title="Math.ceil"></a>Math.ceil</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">作用</div><div class="line">	对数进行向上取整</div><div class="line">语法</div><div class="line">	number Math.ceil(x)</div><div class="line">参数</div><div class="line">	x	一个数字</div><div class="line">返回值</div><div class="line">	返回x向上取整后的值.</div><div class="line"></div><div class="line">     console.log( Math.ceil( 2.3 ) );//3</div><div class="line">     console.log( Math.ceil( 2.0 ) );//2</div><div class="line">     console.log( Math.ceil( -2.1 ) );//-2</div></pre></td></tr></table></figure>
+<h2 id="Math-floor"><a href="#Math-floor" class="headerlink" title="Math.floor"></a>Math.floor</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">作用</div><div class="line">	对数进行向下取整</div><div class="line">语法</div><div class="line">	number Math.floor(x)</div><div class="line">参数</div><div class="line">	x	一个数字</div><div class="line">返回值</div><div class="line">	返回x向下取整后的值.</div><div class="line">	console.log( Math.floor( 2.3 ) );//2</div><div class="line">	console.log( Math.floor( 2.0 ) );//2</div><div class="line">	console.log( Math.floor( -2.7 ));//-3</div></pre></td></tr></table></figure>
+<h2 id="Math-round"><a href="#Math-round" class="headerlink" title="Math.round"></a>Math.round</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">作用</div><div class="line">	对数进行四舍五入</div><div class="line">语法</div><div class="line">	number Math.round(x)</div><div class="line">参数</div><div class="line">	x	一个数字</div><div class="line">返回值</div><div class="line">	返回x四舍五入后的值.</div><div class="line"></div><div class="line">	console.log( Math.round( 2.0 ) );//2</div><div class="line">	console.log( Math.round( -2.7 ));//-3</div><div class="line">	console.log( Math.round( 0.5 ) );//l</div></pre></td></tr></table></figure>
+<h2 id="Math-abs"><a href="#Math-abs" class="headerlink" title="Math.abs"></a>Math.abs</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">作用</div><div class="line">	取数的绝对值</div><div class="line">语法</div><div class="line">	number Math.abs(x)</div><div class="line">参数</div><div class="line">	x	一个数字</div><div class="line">返回值</div><div class="line">	返回x的绝对值.</div><div class="line"></div><div class="line">	console.log( Math.abs( 2.7 ) );//2.7</div><div class="line">	console.log( Math.abs( 2.0 ) );//2</div><div class="line">	console.log( Math.abs( -2.7 ));//2.7</div></pre></td></tr></table></figure>
+<h2 id="Math-random"><a href="#Math-random" class="headerlink" title="Math.random"></a>Math.random</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">作用</div><div class="line">	返回0-1之间的随机数，不包含1</div><div class="line">语法</div><div class="line">	number Math.random()</div><div class="line">返回值</div><div class="line">	返回0-1之间的随机数，不包含1.</div><div class="line">生成指定范围的随机数</div><div class="line">	0 ~ x:(包括0 不包括x)</div><div class="line">	Math.random()*x</div><div class="line"></div><div class="line">	0-10 之间的随机数</div><div class="line">			console.log( Math.random()*10 );</div></pre></td></tr></table></figure>
+<h2 id="Math-PI"><a href="#Math-PI" class="headerlink" title="Math.PI"></a>Math.PI</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">圆周率</div><div class="line"> console.log( Math.PI );//3.141592653589793</div></pre></td></tr></table></figure>
+<h2 id="arr-push"><a href="#arr-push" class="headerlink" title="arr.push()"></a>arr.push()</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">作用</div><div class="line">    添加一个或多个元素到数组的末尾</div><div class="line">语法</div><div class="line">    number arr.push(element1, ..., elementN)</div><div class="line">   参数</div><div class="line">    elementN	一个或多个元素</div><div class="line">返回值</div><div class="line">    新数组的length</div><div class="line"></div><div class="line">    arr.push( [7,1] );// [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, Array(2)]</div><div class="line">    arr.push( &quot;x&quot;,&quot;z&quot; );//[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;,&quot;x&quot;,&quot;z&quot;];</div></pre></td></tr></table></figure>
+<h2 id="arr-pop"><a href="#arr-pop" class="headerlink" title="arr.pop()"></a>arr.pop()</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">作用</div><div class="line">	删除数组最后 一个 元素</div><div class="line">语法</div><div class="line">	mixed arr.pop()</div><div class="line">返回值</div><div class="line">	被删除的那一个元素</div><div class="line"></div><div class="line">	var arr = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,[ 1,2,3 ]];</div><div class="line"></div><div class="line">		var res = arr.pop();</div><div class="line"></div><div class="line">		console.log( res );//1,2,3</div></pre></td></tr></table></figure>
+<h2 id="arr-unshift"><a href="#arr-unshift" class="headerlink" title="arr.unshift()"></a>arr.unshift()</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">作用</div><div class="line">	添加一个或多个元素到数组的头部</div><div class="line">语法</div><div class="line">	number arr.unshift(element1, ..., elementN)</div><div class="line">参数</div><div class="line">	elementN	一个或多个元素</div><div class="line">返回值</div><div class="line">	新数组的length</div><div class="line"></div><div class="line">	var arr = [&quot;a&quot;,&quot;b&quot;];</div><div class="line">	var res = arr.unshift( &quot;3&quot; );</div><div class="line">	console.log( arr );	//[&quot;3&quot;, &quot;a&quot;, &quot;b&quot;]</div></pre></td></tr></table></figure>
+<h2 id="arr-shift"><a href="#arr-shift" class="headerlink" title="arr.shift()"></a>arr.shift()</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">作用</div><div class="line">	删除数组第一个元素</div><div class="line">语法</div><div class="line">	number arr.shift()</div><div class="line">参数</div><div class="line">	返回值</div><div class="line">	被删除的那一个元素</div><div class="line"></div><div class="line">	var arr = [&quot;a&quot;,&quot;b&quot;];</div><div class="line">	var res = arr.shift();</div><div class="line">	console.log( res );//b</div><div class="line">	console.log( arr );//b</div></pre></td></tr></table></figure>
+<h2 id="arr-forEach"><a href="#arr-forEach" class="headerlink" title="arr.forEach()"></a>arr.forEach()</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">作用</div><div class="line">	让数组的每一项都执行一次给定的函数</div><div class="line">语法</div><div class="line">	array.forEach(callback[, thisArg])</div><div class="line">参数</div><div class="line">	callback	在数组每一项上执行的函数，</div><div class="line">		接收三个参数：</div><div class="line">		currentValue	当前项的值。</div><div class="line">		index	当前项的索引（或下标）。</div><div class="line">		array	数组本身。</div><div class="line"></div><div class="line">	var arr = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;];</div><div class="line"></div><div class="line">		arr.forEach( function(a)&#123;//a是当前项的值。</div><div class="line">//			console.log( 1 );</div><div class="line">			console.log( a );</div><div class="line">		&#125; )</div><div class="line"></div><div class="line">		arr.forEach( function(a,b)&#123;//b是当前项的索引</div><div class="line">			console.log( a,b );</div><div class="line">		&#125; )</div><div class="line"></div><div class="line">		arr.forEach( function(a,b,c)&#123;//c数组本身</div><div class="line">			console.log( a,b,c );</div><div class="line">		&#125; )</div></pre></td></tr></table></figure>
+<h2 id="arr-sort"><a href="#arr-sort" class="headerlink" title="arr.sort()"></a>arr.sort()</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">作用</div><div class="line">	对数组的元素进行排序</div><div class="line">语法</div><div class="line">	array arr.sort([compareFunction])</div><div class="line">参数</div><div class="line">	compareFunction</div><div class="line">	可选。用来指定按某种顺序进行排列的函数。如果省略，元素按照转换为的字符串的诸个字符的Unicode位点进行排序。</div><div class="line">返回值</div><div class="line">	排序后的数组</div><div class="line"></div><div class="line">	var arr = [3,4,5,1,2,32];</div><div class="line"></div><div class="line">//  arr.sort();</div><div class="line"></div><div class="line">	arr.sort(function(a,b)&#123;</div><div class="line">//		return a-b;//从小往大排列</div><div class="line">//		return b-a;//从大往小排列</div><div class="line">		return Math.random()-0.5;//随机打乱</div><div class="line">	&#125;)</div><div class="line"></div><div class="line">    console.log( arr );</div></pre></td></tr></table></figure>
+<h2 id="array-concat"><a href="#array-concat" class="headerlink" title="array.concat"></a>array.concat</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">作用</div><div class="line">	将传入的数组或非数组值与原数组合并,组成一个新的数组并返回</div><div class="line">语法</div><div class="line">	array array.concat(value1, value2, ..., valueN)</div><div class="line">参数</div><div class="line">	valueN</div><div class="line">	需要与原数组合并的数组或非数组值.</div><div class="line">返回值</div><div class="line">	合并后的数组</div><div class="line">注意：不会修改原数组的内容。</div><div class="line"></div><div class="line">var arr1 = [1,2,3];</div><div class="line">var res = arr1.concat( [4,5,6,7] );</div><div class="line"></div><div class="line">	console.log( res );//1,2,3,4,5,6,7</div><div class="line">	console.log( arr1 );//不会修改原数组的内容。1,2,3</div></pre></td></tr></table></figure>
+<h2 id="arr-reverse"><a href="#arr-reverse" class="headerlink" title="arr.reverse()"></a>arr.reverse()</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">作用</div><div class="line">	颠倒数组中元素的位置</div><div class="line">语法</div><div class="line">	array arr.reverse()</div><div class="line"></div><div class="line">返回值</div><div class="line">	颠倒顺序后的数组</div><div class="line">注意：会改变原数组的元素顺序</div><div class="line"></div><div class="line">    var arr1 = [1,2,3];</div><div class="line"></div><div class="line">    var res = arr1.reverse();</div><div class="line"></div><div class="line">    console.log( res );//3,2,1</div><div class="line"></div><div class="line">    console.log( arr1 );//修改原数组的顺序3,2,1</div></pre></td></tr></table></figure>
+<h2 id="arr-join"><a href="#arr-join" class="headerlink" title="arr.join()"></a>arr.join()</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">作用</div><div class="line">	将数组中的所有元素连接成一个字符串</div><div class="line">语法</div><div class="line">	string arr.join([separator = &apos;,&apos;])</div><div class="line">参数</div><div class="line">	separator</div><div class="line">	可选，如果省略的话，默认为一个逗号。如果 seprator 是一个空字符串，那么数组中的所有元素将被直接连接。</div><div class="line">返回值</div><div class="line">	拼接后的字符串</div><div class="line"></div><div class="line">	var arr = [1,2,3];</div><div class="line"></div><div class="line">	arr.join();</div><div class="line"></div><div class="line">	var str = arr.join();//不传入参数默认以&quot;,&quot;进行拼接1,2,3</div><div class="line"></div><div class="line">	console.log( arr );//不会修改原数组内容[1,2,3]</div></pre></td></tr></table></figure>
+<h2 id="arr-slice"><a href="#arr-slice" class="headerlink" title="arr.slice()"></a>arr.slice()</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">作用</div><div class="line">	截取数组中一部分，并返回这个新的数组。</div><div class="line">语法</div><div class="line">	array	arr.slice([begin[，end]])</div><div class="line">参数</div><div class="line">	begin	起始位置</div><div class="line">	end 结束位置</div><div class="line">返回值</div><div class="line"></div><div class="line">截取后的新的数组</div><div class="line">	注意：包含起始位置，不包含结束位置</div><div class="line">		不改变原数组内容</div><div class="line"></div><div class="line">	var arr = [0,1,2,3,4,5,6];</div><div class="line"></div><div class="line">	var res = arr.slice( 2,5 );//[2,3,4]</div><div class="line">	var res = arr.slice( 5,2 );//[]</div><div class="line"></div><div class="line">	var res = arr.slice( -5,-2 );//[2, 3, 4]</div><div class="line"></div><div class="line">	console.log( res );</div><div class="line"></div><div class="line">	console.log( arr );//不改变原数组内容</div></pre></td></tr></table></figure>
+<h2 id="arr-splice"><a href="#arr-splice" class="headerlink" title="arr.splice()"></a>arr.splice()</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">作用</div><div class="line">	用新元素替换旧元素，以此修改数组的内容</div><div class="line">语法</div><div class="line">	array	array.splice(start, deleteCount[, item1[, item2[, ...]]])</div><div class="line">参数</div><div class="line">	start	起始位置</div><div class="line">	deleteCount	删除长度</div><div class="line">	item	添加的内容</div><div class="line">返回值</div><div class="line">	由被删除的元素组成的一个数组</div><div class="line"></div><div class="line">注意：修改了原数组的内容</div><div class="line"></div><div class="line">var arr = [0,1,2,3,4,5,6];</div><div class="line">var res = arr.splice( 2,3 );//从第2位开始，删除3项，返回删除的这三项（数组），作为返回值</div><div class="line">console.log( res );//[2,3,4]</div><div class="line"></div><div class="line">console.log( arr );// [0, 1, 2, 3, 4, 5, 6]</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/19/表单/" rel="next" title="表单">
+                <i class="fa fa-chevron-left"></i> 表单
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="smilemm" />
+          <p class="site-author-name" itemprop="name">smilemm</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Math-ceil"><span class="nav-number">1.</span> <span class="nav-text">Math.ceil</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Math-floor"><span class="nav-number">2.</span> <span class="nav-text">Math.floor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Math-round"><span class="nav-number">3.</span> <span class="nav-text">Math.round</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Math-abs"><span class="nav-number">4.</span> <span class="nav-text">Math.abs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Math-random"><span class="nav-number">5.</span> <span class="nav-text">Math.random</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Math-PI"><span class="nav-number">6.</span> <span class="nav-text">Math.PI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#arr-push"><span class="nav-number">7.</span> <span class="nav-text">arr.push()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#arr-pop"><span class="nav-number">8.</span> <span class="nav-text">arr.pop()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#arr-unshift"><span class="nav-number">9.</span> <span class="nav-text">arr.unshift()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#arr-shift"><span class="nav-number">10.</span> <span class="nav-text">arr.shift()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#arr-forEach"><span class="nav-number">11.</span> <span class="nav-text">arr.forEach()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#arr-sort"><span class="nav-number">12.</span> <span class="nav-text">arr.sort()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#array-concat"><span class="nav-number">13.</span> <span class="nav-text">array.concat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#arr-reverse"><span class="nav-number">14.</span> <span class="nav-text">arr.reverse()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#arr-join"><span class="nav-number">15.</span> <span class="nav-text">arr.join()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#arr-slice"><span class="nav-number">16.</span> <span class="nav-text">arr.slice()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#arr-splice"><span class="nav-number">17.</span> <span class="nav-text">arr.splice()</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">smilemm</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
