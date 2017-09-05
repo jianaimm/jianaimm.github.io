@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="js,字符串，string" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="smilemm的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="字符串12345678910111213字符串：	使用一对单引号或双引号包含起来的由0个或多个字符组成的串。	&amp;quot;abc&amp;quot;	&amp;quot;123&amp;quot;	&amp;apos;121sadasd&amp;apos;	&amp;quot;&amp;quot;空字符串	&amp;quot; &amp;quot;空格字符串、空白字符串字符串长度：	string.length	 alert( &amp;quot;123&amp;quot;.lengt">
+<meta name="keywords" content="js,字符串，string">
+<meta property="og:type" content="article">
+<meta property="og:title" content="字符串 -- String">
+<meta property="og:url" content="http://yoursite.com/2017/07/19/字符串/index.html">
+<meta property="og:site_name" content="smilemm的博客">
+<meta property="og:description" content="字符串12345678910111213字符串：	使用一对单引号或双引号包含起来的由0个或多个字符组成的串。	&amp;quot;abc&amp;quot;	&amp;quot;123&amp;quot;	&amp;apos;121sadasd&amp;apos;	&amp;quot;&amp;quot;空字符串	&amp;quot; &amp;quot;空格字符串、空白字符串字符串长度：	string.length	 alert( &amp;quot;123&amp;quot;.lengt">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-05T09:47:03.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="字符串 -- String">
+<meta name="twitter:description" content="字符串12345678910111213字符串：	使用一对单引号或双引号包含起来的由0个或多个字符组成的串。	&amp;quot;abc&amp;quot;	&amp;quot;123&amp;quot;	&amp;apos;121sadasd&amp;apos;	&amp;quot;&amp;quot;空字符串	&amp;quot; &amp;quot;空格字符串、空白字符串字符串长度：	string.length	 alert( &amp;quot;123&amp;quot;.lengt">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/07/19/字符串/"/>
+
+
+
+
+
+  <title>字符串 -- String | smilemm的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <a href="https://github.com/jianaimm"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">smilemm的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-tags" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/19/字符串/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="smilemm">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="smilemm的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">字符串 -- String</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-19T23:12:51+08:00">
+                2017-07-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Blog/" itemprop="url" rel="index">
+                    <span itemprop="name">Blog</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">字符串：</div><div class="line">	使用一对单引号或双引号包含起来的由0个或多个字符组成的串。</div><div class="line">	&quot;abc&quot;</div><div class="line">	&quot;123&quot;</div><div class="line">	&apos;121sadasd&apos;</div><div class="line">	&quot;&quot;空字符串</div><div class="line">	&quot; &quot;空格字符串、空白字符串</div><div class="line"></div><div class="line">字符串长度：</div><div class="line">	string.length</div><div class="line">	 alert( &quot;123&quot;.length );</div><div class="line">	 alert( &quot;&quot;.length );//0</div><div class="line">	 alert( &quot;  &quot;.length );//2</div></pre></td></tr></table></figure>
+<h2 id="方法阅读格式"><a href="#方法阅读格式" class="headerlink" title="方法阅读格式"></a>方法阅读格式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">方法的阅读格式规定：</div><div class="line">	返回值类型 对象.方法名称( 参数1 [,参数2] )</div><div class="line"></div><div class="line">	返回值类型 : 表示函数调用后的返回值的类型</div><div class="line">	对象.方法名称 : 表示函数的调用方式</div><div class="line">	参数列表 : 表示调用函数的时候传入的参数</div><div class="line">		[] 表示可选参数</div></pre></td></tr></table></figure>
+<h2 id="charAt"><a href="#charAt" class="headerlink" title="charAt"></a>charAt</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">作用</div><div class="line">	方法返回字符串中指定位置的字符</div><div class="line">语法</div><div class="line">	string string.charAt(index)</div><div class="line">参数</div><div class="line">	index</div><div class="line">		0 到 字符串长度-1 的一个整数</div><div class="line">返回值</div><div class="line">	返回字符串</div><div class="line">注意：如果index小于0或者大于等于(过界)字符串长度，返回空字符串</div><div class="line"></div><div class="line">	console.log(&quot;miaov&quot;.charAt(2));//2</div><div class="line">	console.log(&quot;miaov&quot;.charAt(-1));//空</div><div class="line">	console.log(&quot;miaov&quot;.charAt(&quot;miaov&quot;.length));//空</div><div class="line">	console.log(&quot;miaov&quot;.charAt(&quot;miaov&quot;.length-1));//v</div></pre></td></tr></table></figure>
+<h2 id="charCodeAt"><a href="#charCodeAt" class="headerlink" title="charCodeAt"></a>charCodeAt</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">作用</div><div class="line">	返回指定索引处字符的 Unicode 数值，如果不存在或者指定值越界返回NaN</div><div class="line">语法</div><div class="line">	number string.charCodeAt(index)</div><div class="line">参数</div><div class="line">	index</div><div class="line">	一个大于等于 0，小于字符串长度的整数。如果不是一个数值，则默认为 0。</div><div class="line">返回值</div><div class="line">	返回指定索引处字符的 Unicode 数值</div></pre></td></tr></table></figure>
+<h2 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf"></a>indexOf</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">作用</div><div class="line">	返回指定值在调用该方法的字符串中首次出现的位置</div><div class="line">语法</div><div class="line">	number string.indexOf(searchValue [, fromIndex])</div><div class="line">参数</div><div class="line">	searchValue</div><div class="line">		一个字符串表示被查找的值</div><div class="line">	fromIndex</div><div class="line">		开始查找的位置，默认值为0</div><div class="line">返回值</div><div class="line">	返回数字</div><div class="line">注意：</div><div class="line">	如果存在 返回位置，如果不存在返回-1</div><div class="line"></div><div class="line">	console.log( &quot;miaov&quot;.indexOf( &quot;a&quot; ) );//2</div><div class="line">	console.log( &quot;miaovaaa&quot;.indexOf( &quot;aa&quot; ) );//5</div><div class="line">	console.log( &quot;miaov&quot;.indexOf( &quot;z&quot; ) );//-1</div><div class="line">	console.log( &quot;miaova&quot;.indexOf( &quot;a&quot;,3 ) );//5</div></pre></td></tr></table></figure>
+<h2 id="lastIndexOf"><a href="#lastIndexOf" class="headerlink" title="lastIndexOf"></a>lastIndexOf</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">作用</div><div class="line">	返回指定值在调用该方法的字符串中最后出现的位置</div><div class="line">语法</div><div class="line">	number string.lastIndexOf(searchValue [, fromIndex])</div><div class="line">参数</div><div class="line">	searchValue</div><div class="line">		一个字符串表示被查找的值</div><div class="line">	fromIndex</div><div class="line">		开始查找的位置，默认值为str.length-1</div><div class="line">返回值</div><div class="line">	返回数字</div><div class="line">注意：</div><div class="line">	如果存在返回位置，如果不存在返回-1</div><div class="line"></div><div class="line">    console.log( &quot;amiaov&quot;.lastIndexOf(&quot;a&quot;) );//3</div><div class="line">    console.log( &quot;amiaov&quot;.lastIndexOf(&quot;ao&quot;) );//3</div><div class="line"></div><div class="line">    console.log( &quot;amiaov&quot;.lastIndexOf(&quot;z&quot;) );//-1</div><div class="line"></div><div class="line">    console.log( &quot;amiaov&quot;.lastIndexOf(&quot;a&quot;,1) );//0</div></pre></td></tr></table></figure>
+<h2 id="slice"><a href="#slice" class="headerlink" title="slice"></a>slice</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">作用</div><div class="line">	方法提取字符串中的一部分，并返回这个新的字符串（包含起始位置，不包含结束位置）</div><div class="line">语法</div><div class="line">	string string.slice(beginSlice[, endSlice])</div><div class="line">参数</div><div class="line">	beginSlice</div><div class="line">		起始位置</div><div class="line">	endSlice</div><div class="line">		结束位置，默认为最后一个字符的位置+1</div><div class="line">返回值</div><div class="line">	返回截取后的字符串</div><div class="line">注意：</div><div class="line">	不会根据参数大小 交换参数位置</div><div class="line">	如果参数中有负值，则处理成从末尾开始数（倒数）</div><div class="line">	var str = &quot;dislike&quot;;</div><div class="line">    console.log( str.slice( 3 ) );//返回截取出的字符串</div><div class="line"></div><div class="line">    console.log( str.slice( 3,5 ) );//&quot;li&quot;包含起始位置不包含结束位置</div><div class="line"></div><div class="line">    console.log( str );//不会改变str的内容</div><div class="line"></div><div class="line">    console.log( str.slice( 5,3 ) );//&quot;&quot;</div><div class="line">    console.log( str.slice( -4,-1 ) );//&quot;lik&quot;</div><div class="line">    console.log( str.slice( -2,-5 ) );//&quot;&quot;</div></pre></td></tr></table></figure>
+<h2 id="split"><a href="#split" class="headerlink" title="split"></a>split</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">作用</div><div class="line">	通过一个指定的字符串把原字符串分割成一个数组</div><div class="line">语法</div><div class="line">	array string.split([separator] [, limit])</div><div class="line">参数</div><div class="line">	separator</div><div class="line">		分割符</div><div class="line">	limit</div><div class="line">		指定最多分割的数量，默认为全部</div><div class="line">返回值</div><div class="line"></div><div class="line">	返回一个数组</div><div class="line">注意：当没有分割符的时候，整个字符串将作为一个整体保存到数组中</div><div class="line"></div><div class="line">    var str = &quot;all is well&quot;;</div><div class="line">	console.log( str.split() );</div><div class="line"></div><div class="line">	console.log( str.split( &quot; &quot; ) );//[&quot;all&quot;, &quot;is&quot;, &quot;well&quot;]</div><div class="line">	console.log( str.split( &quot;l&quot; ) );//[&quot;a&quot;, &quot;&quot;, &quot; is we&quot;, &quot;&quot;, &quot;&quot;]</div><div class="line"></div><div class="line">	console.log( str.split( &quot;&quot; ) );//&quot;a&quot;，&quot;l&quot;,&quot;l&quot;,&quot; &quot;,&quot;i&quot;,&quot;s&quot;,&quot; &quot;,&quot;w&quot;,&quot;e&quot;,&quot;l&quot;,&quot;l&quot;</div><div class="line"></div><div class="line">	console.log( str );//不会改变str的内容</div></pre></td></tr></table></figure>
+<h2 id="substring"><a href="#substring" class="headerlink" title="substring"></a>substring</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">作用</div><div class="line">	截取指定位置之间的字符串(不包含结束位置上的字符)</div><div class="line">语法</div><div class="line">	string string.substring(indexStart [, indexEnd])</div><div class="line">参数</div><div class="line">	indexStart</div><div class="line">		截取的起始位置,默认值为0，如果是负数转换成0；</div><div class="line"></div><div class="line">	indexEnd</div><div class="line">		截取的结束位置，默认为最后一个字符的位置+1，默认值为0，如果是负数转换成0，</div><div class="line"></div><div class="line">如果起始位置比结束位置大则交换位置</div><div class="line"></div><div class="line">返回值</div><div class="line">	返回截取后的字符串</div><div class="line">注意：</div><div class="line">	会把负值转换成0</div><div class="line">	会根据起始位置和结束位置的大小先进行参数位置的变换，再进行截取</div><div class="line"></div><div class="line">	var str = &quot;miaov&quot;;</div><div class="line">	console.log( str.substring( 1,3 ));//&quot;ia&quot;</div><div class="line">	console.log( str.substring( 3,1 ));//&quot;ia&quot;</div><div class="line">	console.log( str.substring( -3,1 ));//&quot;m&quot;</div></pre></td></tr></table></figure>
+<h2 id="substr"><a href="#substr" class="headerlink" title="substr"></a>substr</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">作用</div><div class="line">	截取指定起始位置和长度的子字符串</div><div class="line">语法</div><div class="line">	string string.substr(start [, length])</div><div class="line">参数</div><div class="line">	start</div><div class="line">		截取的起始位置</div><div class="line">	length</div><div class="line">		截取的字符串长度，默认为字符长度</div><div class="line">返回值</div><div class="line">	返回截取后的字符串</div><div class="line"></div><div class="line">	var str = &quot;miaov&quot;;</div><div class="line">	console.log( str.substr( 1 ) );</div><div class="line"></div><div class="line">	console.log( str.substr( 1,2 ) );//&quot;ia&quot;</div><div class="line">	console.log( str.substr( 1,-2 ) );//&quot;&quot;</div></pre></td></tr></table></figure>
+<h2 id="toLowerCase"><a href="#toLowerCase" class="headerlink" title="toLowerCase"></a>toLowerCase</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">作用</div><div class="line">	把字符串全部转成小写</div><div class="line">语法</div><div class="line">	string string.toLowerCase()</div><div class="line">参数</div><div class="line">返回值</div><div class="line">	返回转成小写的字符串</div><div class="line"></div><div class="line">	var str = &quot;some sAy lOve it is a rIver&quot;;</div><div class="line"></div><div class="line">	console.log( str.toLowerCase() );//some say love it is a river</div></pre></td></tr></table></figure>
+<h2 id="toUpperCase"><a href="#toUpperCase" class="headerlink" title="toUpperCase"></a>toUpperCase</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">作用</div><div class="line">	把字符串全部转成大写</div><div class="line">语法</div><div class="line">	string string.toUpperCase()</div><div class="line">参数</div><div class="line">返回值</div><div class="line">	返回转成大写的字符串</div><div class="line"></div><div class="line">	var str = &quot;some sAy lOve it is a rIver&quot;;</div><div class="line">	console.log( str.toUpperCase() );//SOME SAY LOVE IT IS A RIVER</div></pre></td></tr></table></figure>
+<h2 id="trim"><a href="#trim" class="headerlink" title="trim"></a>trim</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">作用</div><div class="line">	去掉字符串首尾的全部空格</div><div class="line">语法</div><div class="line">	string string.trim()</div><div class="line">参数</div><div class="line">返回值</div><div class="line">	返回去除首尾全部空格后的字符串</div><div class="line"></div><div class="line">	var str = &quot;      mi  aov   &quot;;</div><div class="line">	console.log( &quot;|&quot;+str.trim()+&quot;|&quot; );|mi  aov|</div><div class="line">	console.log( &quot;|&quot;+str.trimLeft()+&quot;|&quot; );//去除首部空格|mi  aov   |</div><div class="line">	console.log( &quot;|&quot;+str.trimRight()+&quot;|&quot; );//去除尾部空格|      mi  aov|</div><div class="line">	console.log( &quot;|&quot;+str+&quot;|&quot; );//|      mi  aov   |</div></pre></td></tr></table></figure>
+<h2 id="josn"><a href="#josn" class="headerlink" title="josn"></a>josn</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式</div><div class="line">	一种类似JS中的对象格式的字符串</div><div class="line">JSON规则</div><div class="line">	数据以&#123;&#125;或者[]作为起始和结束</div><div class="line">    &apos;&#123;&#125;&apos;</div><div class="line">    &apos;[]&apos;</div><div class="line">    每个数据使用 键值对形式 key : value</div><div class="line">    key必须使用&quot;&quot;包含</div><div class="line">    多个值之间使用逗号分隔</div><div class="line"></div><div class="line"></div><div class="line">JSON操作方法</div><div class="line">	object JSON.parse(JSONString)</div><div class="line">		把JSONString转换成JS中对象类型</div><div class="line">	string JSON.stringify(object)</div><div class="line">		把object转成JSON格式的字符串</div><div class="line"></div><div class="line">	var j = &apos;&#123;&quot;name&quot;:&quot;tong&quot;,&quot;age&quot;:30&#125;&apos;;</div><div class="line">	var j = &apos;&#123;name:&quot;tong&quot;,age:30&#125;&apos;;//键名必须用双引号包起来</div><div class="line"></div><div class="line">	var obj = JSON.parse(j);//JSON格式字符串转变成对象</div><div class="line">	console.log( obj );</div><div class="line">	console.log( obj.name );//tong</div><div class="line">	console.log( j );//&#123;&quot;name&quot;:&quot;tong&quot;,&quot;age&quot;:30&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/28/移动端/" rel="next" title="移动端">
+                <i class="fa fa-chevron-left"></i> 移动端
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/19/表单/" rel="prev" title="表单">
+                表单 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="smilemm" />
+          <p class="site-author-name" itemprop="name">smilemm</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              推荐阅读
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.uisdc.com/" title="优设" target="_blank">优设</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank">前端书籍资料</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://ife.baidu.com/" title="百度前端技术学院" target="_blank">百度前端技术学院</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wf.uisdc.com/cn/" title="google前端开发基础" target="_blank">google前端开发基础</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串"><span class="nav-number">1.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法阅读格式"><span class="nav-number">2.</span> <span class="nav-text">方法阅读格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#charAt"><span class="nav-number">3.</span> <span class="nav-text">charAt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#charCodeAt"><span class="nav-number">4.</span> <span class="nav-text">charCodeAt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#indexOf"><span class="nav-number">5.</span> <span class="nav-text">indexOf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lastIndexOf"><span class="nav-number">6.</span> <span class="nav-text">lastIndexOf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#slice"><span class="nav-number">7.</span> <span class="nav-text">slice</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#split"><span class="nav-number">8.</span> <span class="nav-text">split</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#substring"><span class="nav-number">9.</span> <span class="nav-text">substring</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#substr"><span class="nav-number">10.</span> <span class="nav-text">substr</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#toLowerCase"><span class="nav-number">11.</span> <span class="nav-text">toLowerCase</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#toUpperCase"><span class="nav-number">12.</span> <span class="nav-text">toUpperCase</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#trim"><span class="nav-number">13.</span> <span class="nav-text">trim</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#josn"><span class="nav-number">14.</span> <span class="nav-text">josn</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">smilemm</span>
+</div>
+
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>

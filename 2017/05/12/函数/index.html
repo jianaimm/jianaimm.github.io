@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="函数，表达式" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="smilemm的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="1、函数声明12345678910111213141516171819201、函数声明    注意：下面这段代码中[]包起来的部分可以写可以不写    function [函数名]([参数])&amp;#123;    &amp;#125;调用方法：        函数名([参数])有名函数		function fn1 () &amp;#123;		&amp;#125;		匿名函数		function () &amp;#123;		&amp;#">
+<meta name="keywords" content="函数，表达式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="函数 -- Function 声明&#x2F;表达式">
+<meta property="og:url" content="http://yoursite.com/2017/05/12/函数/index.html">
+<meta property="og:site_name" content="smilemm的博客">
+<meta property="og:description" content="1、函数声明12345678910111213141516171819201、函数声明    注意：下面这段代码中[]包起来的部分可以写可以不写    function [函数名]([参数])&amp;#123;    &amp;#125;调用方法：        函数名([参数])有名函数		function fn1 () &amp;#123;		&amp;#125;		匿名函数		function () &amp;#123;		&amp;#">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-05T09:46:18.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="函数 -- Function 声明&#x2F;表达式">
+<meta name="twitter:description" content="1、函数声明12345678910111213141516171819201、函数声明    注意：下面这段代码中[]包起来的部分可以写可以不写    function [函数名]([参数])&amp;#123;    &amp;#125;调用方法：        函数名([参数])有名函数		function fn1 () &amp;#123;		&amp;#125;		匿名函数		function () &amp;#123;		&amp;#">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/05/12/函数/"/>
+
+
+
+
+
+  <title>函数 -- Function 声明/表达式 | smilemm的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <a href="https://github.com/jianaimm"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">smilemm的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-tags" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/12/函数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="smilemm">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="smilemm的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">函数 -- Function 声明/表达式</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-12T23:43:40+08:00">
+                2017-05-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Blog/" itemprop="url" rel="index">
+                    <span itemprop="name">Blog</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1、函数声明"><a href="#1、函数声明" class="headerlink" title="1、函数声明"></a>1、函数声明</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">1、函数声明</div><div class="line">    注意：下面这段代码中[]包起来的部分可以写可以不写</div><div class="line">    function [函数名]([参数])&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">调用方法：</div><div class="line">        函数名([参数])</div><div class="line"></div><div class="line">有名函数</div><div class="line">		function fn1 () &#123;</div><div class="line"></div><div class="line">		&#125;</div><div class="line">		匿名函数</div><div class="line">		function () &#123;</div><div class="line"></div><div class="line">		&#125;</div><div class="line">		注意:直接声明匿名函数会报错</div><div class="line"></div><div class="line">		调用</div><div class="line">		fn1();</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">2、函数表达式</div><div class="line">	    var fn1 = function()&#123;</div><div class="line"></div><div class="line">	    &#125;</div><div class="line">		调用方法：</div><div class="line">	        fn1([参数])</div><div class="line"></div><div class="line"></div><div class="line">    	  var fn1 = function()&#123;</div><div class="line">    		    	alert(1);</div><div class="line">    		    &#125;</div><div class="line"></div><div class="line">    		    fn1();</div></pre></td></tr></table></figure>
+<h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">参数：</div><div class="line"></div><div class="line">	参数的作用：</div><div class="line"></div><div class="line">	我们希望函数的功能更加强大，富有拓展性，如果没有参数，只要需求稍微改变，那么我们的函数就要重新写了</div><div class="line"></div><div class="line">	参数就是给函数使用的变量</div><div class="line"></div><div class="line">	使用参数：</div><div class="line"></div><div class="line">		需要在函数声明的时候把参数写进去</div><div class="line"></div><div class="line">	比如：</div><div class="line"></div><div class="line">	function fn1(参数名)&#123;</div><div class="line">	    重复执行的代码</div><div class="line">	&#125;</div><div class="line"></div><div class="line"></div><div class="line">	var a = 1,</div><div class="line">		b = 2;</div><div class="line">	var c = 3;</div><div class="line"></div><div class="line">	弹 a 加 b 的和</div><div class="line">	function plusAB()&#123;</div><div class="line">				alert( a+b );</div><div class="line">			&#125;</div><div class="line"></div><div class="line">			b + c 的和</div><div class="line">			function plusBC()&#123;</div><div class="line">				alert( b+c );</div><div class="line">			&#125;</div><div class="line"></div><div class="line">			plusAB();</div><div class="line">			plusBC();</div><div class="line"></div><div class="line">			function plus (num1,num2) &#123;</div><div class="line">				alert( num1 + num2 );</div><div class="line">			&#125;</div><div class="line">			plus( 20,30 );</div></pre></td></tr></table></figure>
+<h2 id="形参"><a href="#形参" class="headerlink" title="形参"></a>形参</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">参数的划分：</div><div class="line"></div><div class="line">	形参：(形参是在函数内使用的变量，名字可以随便取，但是要符合变量命名规范，尽量语义化)</div><div class="line"></div><div class="line">	形式上的参数（函数定义的时候写的）</div><div class="line">	写在函数定义时的小括号里面</div><div class="line">	多个参数以逗号分开</div><div class="line">	注意：形参与实参是一一对应的关系</div><div class="line">	只能在函数的内部使用</div><div class="line"></div><div class="line">	function fn1 ( a,b ) &#123;</div><div class="line">				console.log( a );</div><div class="line">				console.log( b );</div><div class="line">				console.log( a+b )</div><div class="line">			&#125;</div><div class="line">			注意：形参与实参是一一对应的关系</div><div class="line">			fn1( 1,2 )//1,2,3</div><div class="line">			fn1( 2,1 )//2,1,3</div><div class="line">			fn1( 3,4 )//3,4,7</div><div class="line">			fn1( 1,2 );</div><div class="line">			alert( a );//只能在函数的内部使用a</div><div class="line">			alert( b )</div></pre></td></tr></table></figure>
+<h2 id="实参"><a href="#实参" class="headerlink" title="实参"></a>实参</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">实参：</div><div class="line"></div><div class="line">    实际传入的参数（函数调用的时候写的）</div><div class="line">    写在函数调用的时候的小括号里面</div><div class="line">    注意：实参和形参一一对应关系</div><div class="line"></div><div class="line">    注意：如果写了形参，却没有对应的实参，那么在函数调用的时候对应形参的位置上的值是undefined</div><div class="line"></div><div class="line">    我们一般把使用频率大的参数放在前面,方便进行一一对应</div><div class="line"></div><div class="line">    function fn1 (a,b) &#123;</div><div class="line">		console.log( a,b );</div><div class="line">	&#125;</div><div class="line">	fn1( 1,2 );//1,2</div><div class="line">	fn1( 1 );//1,undefined</div></pre></td></tr></table></figure>
+<h2 id="不定参"><a href="#不定参" class="headerlink" title="不定参"></a>不定参</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">arguments(不定参)</div><div class="line"></div><div class="line">	当参数的个数不确定的时候，使用不定参</div><div class="line">	使用：</div><div class="line">	只能在函数中使用</div><div class="line">	类数组，保存实际传入的参数的集合</div><div class="line">	拥有length属性</div><div class="line">	可用下标获取实际参数中对应的值</div><div class="line"></div><div class="line">	两个数相加</div><div class="line">	function fn1( a,b )&#123;</div><div class="line">		console.log( a+b );</div><div class="line">	&#125;</div><div class="line">	fn1( 5,6 );</div><div class="line"></div><div class="line">	三个数相加</div><div class="line">	function fn2( a,b,c )&#123;</div><div class="line">		console.log( a+b+c );</div><div class="line">	&#125;</div><div class="line">	fn2( 2,6,8 );</div><div class="line"></div><div class="line">	function fn3()&#123;</div><div class="line">		console.log( arguments );</div><div class="line">		console.log( arguments.length );</div><div class="line">		console.log( arguments[0] );</div><div class="line">	&#125;</div><div class="line">	fn3(1,2,3,4,5);</div><div class="line">	fn3(6,7);</div><div class="line"></div><div class="line">	function plusAll () &#123;</div><div class="line">//		console.log( arguments[0]+arguments[1]+arguments[2] );</div><div class="line">		var sum = 0;</div><div class="line">		for( var i = 0;i&lt;arguments.length;i++ )&#123;</div><div class="line">			sum += arguments[i];</div><div class="line">		&#125;</div><div class="line">		console.log( sum );</div><div class="line">	&#125;</div><div class="line">	plusAll(2,3,&quot;1&quot;,2);//512</div></pre></td></tr></table></figure>
+<h2 id="return"><a href="#return" class="headerlink" title="return"></a>return</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">return</div><div class="line"></div><div class="line">	只能在函数中使用</div><div class="line">	作用：</div><div class="line"></div><div class="line">	1、return后面跟的值为函数执行后的返回值</div><div class="line">	2、return可以停止函数继续执行</div><div class="line">	如果我们希望使用函数的执行结果做另一些事情,那么我们需要使用函数返回值</div><div class="line"></div><div class="line">	不使用return函数默认返回值为undefined</div><div class="line">	使用return的话，函数返回值就是return 后面的值</div><div class="line"></div><div class="line">	function fn1 (a,b) &#123;</div><div class="line">			console.log( a+b );</div><div class="line">			return 100;</div><div class="line">		&#125;</div><div class="line">		函数fn1 执行过程中 打印 a 和 b 的和</div><div class="line">			函数会返回100，作为函数返回值</div><div class="line">		var a = fn1(1,3);</div><div class="line">		console.log( a );</div><div class="line"></div><div class="line">		function plus () &#123;</div><div class="line">		var sum = 0;</div><div class="line">//		return;//阻止下面的代码执行</div><div class="line">//		return 1;//阻止下面的代码执行</div><div class="line">		for (var i = 0; i &lt; arguments.length; i++) &#123;</div><div class="line">			sum += Number( arguments[i] );</div><div class="line">		&#125;</div><div class="line">		console.log( sum );</div><div class="line">		return sum;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	var a = plus( 1,2,3,4,5);//15</div><div class="line">	console.log( a );//15</div></pre></td></tr></table></figure>
+<h2 id="封装通过id获取元素"><a href="#封装通过id获取元素" class="headerlink" title="封装通过id获取元素"></a>封装通过id获取元素</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var box = document.getElementById(&quot;box&quot;);</div><div class="line"></div><div class="line">//封装一个函数,通过id获取元素</div><div class="line">function $id ( idName ) &#123;</div><div class="line">//	console.log( document.getElementById(idName));</div><div class="line">	return document.getElementById(idName);</div><div class="line">&#125;</div><div class="line"></div><div class="line">$id( &quot;box&quot; ).style.background = &quot;orange&quot;;</div><div class="line">$id( &quot;box&quot; ).style.width = &quot;300px&quot;;</div></pre></td></tr></table></figure>
+<h2 id="封装获取计算后样式"><a href="#封装获取计算后样式" class="headerlink" title="封装获取计算后样式"></a>封装获取计算后样式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">var box = document.getElementById(&quot;box&quot;);</div><div class="line">var box1 = document.getElementById(&quot;box1&quot;);</div><div class="line">//alert( box.style.background );//获取的是行间样式</div><div class="line"></div><div class="line"></div><div class="line">console.log( getComputedStyle( box ) );</div><div class="line"></div><div class="line">console.log( getComputedStyle( box ).backgroundColor );//获取到box计算后的颜色</div><div class="line"></div><div class="line">console.log( getComputedStyle( box ).width );//获取到box计算后的宽度//&quot;100px&quot;</div><div class="line"></div><div class="line"></div><div class="line">function getCss ( attr ) &#123;</div><div class="line">		return getComputedStyle(box)[attr];</div><div class="line">	&#125;</div><div class="line">	box.style.width = &quot;200px&quot;;</div><div class="line">	console.log( getCss( &quot;height&quot; ) );</div><div class="line">	console.log( getCss( &quot;width&quot; ) );</div><div class="line">	console.log( getCss( &quot;backgroundColor&quot; ) );</div><div class="line">	问题: 只能获取box的样式</div><div class="line">		解决:把元素也通过参数传进来</div><div class="line"></div><div class="line">	function getCss ( obj,attr ) &#123;</div><div class="line">		return getComputedStyle(obj)[attr];</div><div class="line">	&#125;</div><div class="line">	console.log( getCss ( box,&quot;width&quot; ) );//100px</div><div class="line">	console.log( getCss ( box1,&quot;width&quot; ) );//</div><div class="line">	console.log( getCss ( box1,&quot;height&quot; ) );//0</div></pre></td></tr></table></figure>
+<h2 id="JQ"><a href="#JQ" class="headerlink" title="JQ"></a>JQ</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">console.log( $(&quot;#box&quot;).css(&quot;width&quot;) );//100px</div><div class="line">console.log( $(&quot;#box&quot;).css(&quot;height&quot;) );//200px</div><div class="line">console.log( $(&quot;#box&quot;).css(&quot;background&quot;) );//RGB（255,0,0）</div><div class="line">$(&quot;#box&quot;).css(&quot;width&quot;,&quot;300px&quot;);//设置box宽度为300px</div><div class="line">$(&quot;#box&quot;).css(&quot;width&quot;,&quot;300px&quot;).css(&quot;background&quot;,&quot;yellow&quot;);</div></pre></td></tr></table></figure>
+<h2 id="设置和获取"><a href="#设置和获取" class="headerlink" title="设置和获取"></a>设置和获取</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">//如果写入两个参数，就是获取元素的某个样式</div><div class="line">//如果写入三个参数，就是设置元素的样式为某个值</div><div class="line">	function css () &#123;</div><div class="line">		if( arguments.length == 2 )&#123;//如果写入两个参数，就是获取元素的某个样式</div><div class="line">			return getComputedStyle(arguments[0])[arguments[1]];</div><div class="line">		&#125;</div><div class="line">		if( arguments.length == 3 )&#123;//如果写入三个参数，就是设置元素的样式为某个值</div><div class="line">			arguments[0].style[arguments[1]] = arguments[2];</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	alert( css( box,&quot;width&quot; ) );//200px</div><div class="line">	alert( css( box,&quot;height&quot; ) );//100px</div><div class="line">	css( box,&quot;backgroundColor&quot;,&quot;green&quot; );</div><div class="line"></div><div class="line">	alert(css(box2,&apos;height&apos;,&apos;800px&apos;));//undefined</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/09/弹性盒模型/" rel="next" title="弹性盒模型">
+                <i class="fa fa-chevron-left"></i> 弹性盒模型
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/22/for循环/" rel="prev" title="For循环">
+                For循环 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="smilemm" />
+          <p class="site-author-name" itemprop="name">smilemm</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              推荐阅读
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.uisdc.com/" title="优设" target="_blank">优设</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank">前端书籍资料</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://ife.baidu.com/" title="百度前端技术学院" target="_blank">百度前端技术学院</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wf.uisdc.com/cn/" title="google前端开发基础" target="_blank">google前端开发基础</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、函数声明"><span class="nav-number">1.</span> <span class="nav-text">1、函数声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参数"><span class="nav-number">2.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#形参"><span class="nav-number">3.</span> <span class="nav-text">形参</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实参"><span class="nav-number">4.</span> <span class="nav-text">实参</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不定参"><span class="nav-number">5.</span> <span class="nav-text">不定参</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#return"><span class="nav-number">6.</span> <span class="nav-text">return</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#封装通过id获取元素"><span class="nav-number">7.</span> <span class="nav-text">封装通过id获取元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#封装获取计算后样式"><span class="nav-number">8.</span> <span class="nav-text">封装获取计算后样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JQ"><span class="nav-number">9.</span> <span class="nav-text">JQ</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置和获取"><span class="nav-number">10.</span> <span class="nav-text">设置和获取</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">smilemm</span>
+</div>
+
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>

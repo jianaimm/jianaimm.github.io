@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="数据类型" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="smilemm的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="数据 变量，数组….中存在的内容 首字母大写基本类型  12341. String(字符串)   由成对的单引号或者双引号包起来的0个或多个字符组成的串- var a = &amp;quot;b&amp;quot;;- b = a + &amp;quot;你好&amp;quot;;//字符串拼接 123456782. Number：	数字：			-Infinity~Infinity之间			分为小数（浮点数）和整数			var">
+<meta name="keywords" content="数据类型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据类型">
+<meta property="og:url" content="http://yoursite.com/2017/05/06/数据类型/index.html">
+<meta property="og:site_name" content="smilemm的博客">
+<meta property="og:description" content="数据 变量，数组….中存在的内容 首字母大写基本类型  12341. String(字符串)   由成对的单引号或者双引号包起来的0个或多个字符组成的串- var a = &amp;quot;b&amp;quot;;- b = a + &amp;quot;你好&amp;quot;;//字符串拼接 123456782. Number：	数字：			-Infinity~Infinity之间			分为小数（浮点数）和整数			var">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-05T09:47:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据类型">
+<meta name="twitter:description" content="数据 变量，数组….中存在的内容 首字母大写基本类型  12341. String(字符串)   由成对的单引号或者双引号包起来的0个或多个字符组成的串- var a = &amp;quot;b&amp;quot;;- b = a + &amp;quot;你好&amp;quot;;//字符串拼接 123456782. Number：	数字：			-Infinity~Infinity之间			分为小数（浮点数）和整数			var">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/05/06/数据类型/"/>
+
+
+
+
+
+  <title>数据类型 | smilemm的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <a href="https://github.com/jianaimm"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">smilemm的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-tags" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/06/数据类型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="smilemm">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="smilemm的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据类型</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-06T23:42:28+08:00">
+                2017-05-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Blog/" itemprop="url" rel="index">
+                    <span itemprop="name">Blog</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h2><ul>
+<li>变量，数组….中存在的内容</li>
+<li>首字母大写<h2 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h2></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1. String(字符串)   由成对的单引号或者双引号包起来的0个或多个字符组成的串</div><div class="line"></div><div class="line">- var a = &quot;b&quot;;</div><div class="line">- b = a + &quot;你好&quot;;//字符串拼接</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">2. Number：	数字：</div><div class="line">			-Infinity~Infinity之间</div><div class="line">			分为小数（浮点数）和整数</div><div class="line">			var num = 1;</div><div class="line"></div><div class="line">    	    num+1;//没有进行赋值，所以num还是1</div><div class="line">    	    num += 1;//相当于 num = num + 1</div><div class="line">    	    num ++; //相当于 num = num + 1</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">3. Boolean   布尔值：</div><div class="line">			true、false</div><div class="line">			一般用布尔值判断真假，进行流程控制等</div><div class="line"></div><div class="line">			var b = true;</div><div class="line">    		if( b )&#123;</div><div class="line">    			alert(1);</div><div class="line">    		&#125;else&#123;</div><div class="line">    			alert(2);</div><div class="line">    		&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">4. Undefined ：未定义</div><div class="line">        申明一个变量，并未给其赋值，那么这个变量内存储的就是undefined；</div><div class="line">        一般来说不希望看到undefined</div><div class="line"></div><div class="line">        var a = &quot;123&quot;;//申明并赋值</div><div class="line">			var a ;//申明</div><div class="line">			a = &quot;123&quot;;//赋值</div><div class="line"></div><div class="line">			var b;//申明不赋值，内部存储的是undefined</div><div class="line">			alert( b );</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">5. Null  值只有一个null，是一个对象</div><div class="line"></div><div class="line">    var a = null;</div><div class="line">    alert( a );</div></pre></td></tr></table></figure>
+<h2 id="复合数据类型"><a href="#复合数据类型" class="headerlink" title="复合数据类型"></a>复合数据类型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">1. Object(对象)：</div><div class="line"></div><div class="line">复合类型是由简单和复合的数据类型组成</div><div class="line">对象： 由一对&#123;&#125;包起来的，0对或者多对键名和键值组成的对,每对键值对 之间用&quot;,&quot;隔开，最后一个不要加&quot;,&quot;</div><div class="line">var a = &#123;</div><div class="line">	    name:&quot;duoduo&quot;,</div><div class="line">	    age:28,</div><div class="line">	    sex:&quot;male&quot;,</div><div class="line">	    isMarried: true,</div><div class="line">	    hobbies:[</div><div class="line">	    	&quot;吃饭&quot;,</div><div class="line">	    	&quot;吃饭&quot;,</div><div class="line">	    	&quot;CSS+js+移动端&quot;</div><div class="line">	    ],</div><div class="line">	    child:[</div><div class="line">	    	&#123;</div><div class="line">		    	name:&quot;xiaohai&quot;,</div><div class="line">		    	age:1,</div><div class="line">		    	sex:&quot;female&quot;</div><div class="line">		    &#125;,&#123;</div><div class="line">		    	name:&quot;xiaocheng&quot;,</div><div class="line">		    	age:10,</div><div class="line">		    	sex:&quot;male&quot;</div><div class="line">		    &#125;</div><div class="line">	    ]</div><div class="line">	&#125;;</div><div class="line">console.log( a.child[1].name );</div></pre></td></tr></table></figure>
+<h2 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">注意：返回值是一个字符串 类型 &quot;number&quot;、&quot;function&quot;</div><div class="line">        typeof 出的结果首字母都是小写的</div><div class="line"></div><div class="line">typeof 出的数据类型</div><div class="line">		String =》 &quot;string&quot;</div><div class="line">		Number =》 &quot;number&quot;</div><div class="line">		Boolean =》 &quot;boolean&quot;</div><div class="line">		Undefined =》 &quot;undefined&quot;</div><div class="line">		Null =》 &quot;object&quot;</div><div class="line">		函数 =》 &quot;function&quot;</div><div class="line">    var str = &quot;abc&quot;;</div><div class="line">    alert( typeof str );//&quot;string&quot;</div><div class="line"></div><div class="line">    var num = 123;</div><div class="line">    alert( typeof num );//&quot;number&quot;</div><div class="line"></div><div class="line">    var boo = true;</div><div class="line">    alert( typeof boo );//&quot;boolean&quot;</div><div class="line"></div><div class="line">    var a;</div><div class="line">    alert( typeof a );//&quot;undefined&quot;</div><div class="line"></div><div class="line">    var n = null;</div><div class="line">    alert( typeof n );//&quot;object&quot;</div><div class="line"></div><div class="line">    var obj = &#123;&#125;;</div><div class="line">    alert( typeof obj );//&quot;object&quot;</div><div class="line"></div><div class="line">    var arr = [];</div><div class="line">    alert( typeof arr );//&quot;object&quot;</div><div class="line"></div><div class="line"></div><div class="line">    var fun = function a()&#123;&#125;</div><div class="line">    alert( typeof fun );//&quot;function&quot;</div><div class="line"></div><div class="line">    alert( typeof typeof fun  );</div><div class="line">    		相当于:</div><div class="line">    alert( typeof &quot;function&quot;  );</div><div class="line">    alert( typeof typeof typeof fun  );</div><div class="line">	相当于:</div><div class="line">	alert( typeof typeof &quot;function&quot;  );</div><div class="line">		alert( typeof &quot;string&quot;  );</div><div class="line">			alert( &quot;string&quot; );</div><div class="line"></div><div class="line">		//alert( typeof( &quot;123&quot; ) );</div></pre></td></tr></table></figure>
+<h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">数据类型转换</div><div class="line">	把一种数据类型转换成另一种数据类型</div><div class="line">	js支持把任何一种数据类型转换成下面三种数据类型</div><div class="line">		Number 数字</div><div class="line">		String 字符串</div><div class="line">		Boolean 布尔值</div></pre></td></tr></table></figure>
+<h2 id="数字类型转换"><a href="#数字类型转换" class="headerlink" title="数字类型转换"></a>数字类型转换</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">Number(数据)</div><div class="line"></div><div class="line">	把数据转变成数字，返回这个数字</div><div class="line"></div><div class="line">	但是不会转变括号中数据的类型</div><div class="line">	如果数据的内容是纯粹的数字，才可以转成数字，否则会转换出NaN</div><div class="line">	 var num = &quot;123&quot;;</div><div class="line"></div><div class="line">	Number( num );//没有赋值</div><div class="line">	num = Number( num )</div><div class="line">	alert( num + 1 );//124</div><div class="line"></div><div class="line">	alert( Number( &quot;a23&quot; ) );//NaN</div></pre></td></tr></table></figure>
+<h2 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">NaN：</div><div class="line">	not a number不是数字</div><div class="line">	数据类型是Number</div><div class="line">	注意：NaN和任何东西都不相等，包括他自己</div><div class="line">	NaN</div><div class="line">    	not a number</div><div class="line">		alert( typeof NaN );//Number</div><div class="line">		alert( 1 == 1 );//true</div><div class="line">		alert( &quot;abc&quot; == &quot;abc&quot; );//true</div><div class="line">		alert( NaN == NaN )//false</div><div class="line">		alert( 1 == NaN )//false</div></pre></td></tr></table></figure>
+<h2 id="inNaN"><a href="#inNaN" class="headerlink" title="inNaN"></a>inNaN</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">isNaN(数据)</div><div class="line">	会把数据先使用Number进行转换，转换完之后在判断是不是NaN</div><div class="line">	如果数据是NaN那么返回true</div><div class="line">	如果数据不是NaN返回false</div><div class="line"></div><div class="line">	var a = &quot;123&quot;;</div><div class="line">        	alert(  isNaN( a )  );</div><div class="line">                首先用Number()对a进行转换</div><div class="line">		得到数字123</div><div class="line">		因为数字123不是NaN 所以是false</div><div class="line"></div><div class="line">	var b = &quot;a123&quot;;</div><div class="line">		alert( isNaN( b )  );</div><div class="line">			首先用Number()对b进行转换</div><div class="line">			得到NaN</div><div class="line">			因为是NaN 所以是true</div><div class="line"></div><div class="line"></div><div class="line">    判断数据是不是NaN？</div><div class="line">			var a = NaN;</div><div class="line">			a = 1212;</div><div class="line">			if( a != a &amp;&amp; typeof a == &quot;number&quot;)&#123;</div><div class="line">				alert(&quot;是NaN&quot;);</div><div class="line">	    	        &#125;</div></pre></td></tr></table></figure>
+<h2 id="数字类型转换成String"><a href="#数字类型转换成String" class="headerlink" title="数字类型转换成String"></a>数字类型转换成String</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">String(数据)</div><div class="line"></div><div class="line">	把数据转变成字符串,返回这个字符串</div><div class="line"></div><div class="line">	但是不会把括号中的数据的类型改变</div><div class="line">	把数据转变成字符串的简便方法：</div><div class="line"></div><div class="line">	&quot;&quot;+数据</div><div class="line">	比如：</div><div class="line">	&quot;&quot; + 1 =&gt; &quot;1&quot;</div><div class="line"></div><div class="line">	var a = 123;</div><div class="line">	alert( String( a )+1 );//1231</div><div class="line">	String( a );</div><div class="line">	alert( a + 1 );//124</div><div class="line"></div><div class="line">	var fun = function fn1 () &#123;&#125;;</div><div class="line">	alert( String( fun )+1 );//function fn1() &#123;&#125;1</div><div class="line"></div><div class="line">	把数据转变成字符串的简便方法：</div><div class="line">	alert( typeof (&quot;&quot;+123) );//string</div></pre></td></tr></table></figure>
+<h2 id="数字类型转换Boolean"><a href="#数字类型转换Boolean" class="headerlink" title="数字类型转换Boolean"></a>数字类型转换Boolean</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">Boolean(数据)</div><div class="line"></div><div class="line">	把数据转变成布尔值，返回这个布尔值</div><div class="line"></div><div class="line">	注意，不会改变括号内数据的类型</div><div class="line">	undefined，null，空字符串（长度为0），0，NaN会转变成false，其余转变结果是true</div><div class="line">	把数据转变成布尔值的简便写法:</div><div class="line"></div><div class="line">	a = &quot;12&quot;;//true</div><div class="line"> 	a = 123 ;//true</div><div class="line"> 	a = &#123;&#125;;//true</div><div class="line"> 	a = &quot; &quot;;//true</div><div class="line">	a = [];//true</div><div class="line">	a = null;//false</div><div class="line">  	a = &quot;&quot;;//false</div><div class="line">	a = NaN;//false</div><div class="line">	a = function()&#123;&#125;;//true</div><div class="line"></div><div class="line">	!!数据</div><div class="line">	! 取反</div><div class="line">	后面的内容如果是真就变成假,</div><div class="line">	后面的内容如果是假就变成真</div><div class="line"></div><div class="line"></div><div class="line">	alert( !true );//false</div><div class="line">   alert( !1 );//false</div><div class="line">	alert( !0 );//true</div><div class="line">	alert( !&quot;123&quot;);	//false</div><div class="line">	alert( !&quot;&quot; );//true</div><div class="line"></div><div class="line">	alert( !!1 );//true</div><div class="line">	alert( !!&#123;&#125; );//true</div><div class="line">真： true    非空字符串	 非0数字  非空对象</div><div class="line">假： false   空字符串   0  NaN   null  undefined</div><div class="line"></div><div class="line">空对象不能进行操作</div></pre></td></tr></table></figure>
+<h2 id="parseInt"><a href="#parseInt" class="headerlink" title="parseInt"></a>parseInt</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">parseInt：  从左向右一位一位去查看，如果遇到一位是非数字的结束执行，把这位之前的数字返回</div><div class="line">把数据转变成整数,舍去小数位，取整数</div><div class="line"></div><div class="line">alert( parseInt( 12.3 ) );//12</div><div class="line">        	 alert( parseInt( 12.9 ) );//12</div><div class="line">                 alert( parseInt( 12.3 )+1 );//13</div><div class="line">        	alert( parseInt( &quot;12.3&quot; ) );//12</div><div class="line">        	alert( parseInt( &quot;12px&quot; ) );//12</div><div class="line">        	alert( parseInt( &quot;12.3rem&quot; ) );//12</div><div class="line">        	alert( parseInt( &quot;a12.3rem&quot; ) );//NaN</div><div class="line">    		alert( parseInt( &quot;   12.3&quot; ) );//12</div><div class="line">        	alert( parseInt( [] ) );//NaN</div><div class="line">        	alert( Number( [] ) )//0</div></pre></td></tr></table></figure>
+<h2 id="parseFloat"><a href="#parseFloat" class="headerlink" title="parseFloat"></a>parseFloat</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">parseFloat(数据)</div><div class="line"></div><div class="line">	把数据转变成小数（浮点数）</div><div class="line">	从左向右一位一位的匹配，直到遇到一个非数字（可以匹配一个小数点）就返回这位前边的数字</div><div class="line">alert( parseFloat(12.34) );//12.34</div><div class="line">	    alert( parseFloat(&quot;12.34&quot;) );//12.34</div><div class="line">	    alert( parseFloat(&quot;12 3 4&quot;) );//12</div><div class="line">	    alert( parseFloat(-12.34) );//-12.34</div><div class="line"></div><div class="line">	    alert( Math.floor(2.3) )//2</div><div class="line">	    alert( Math.floor(-2.3) )//-3</div><div class="line"></div><div class="line">	    alert( parseFloat(&quot;12.34.56&quot;) );//12.34</div><div class="line">	    alert( parseFloat(&quot;12.34rem&quot;) );//12.34</div><div class="line">	    alert( parseFloat(&quot;z12.34rem&quot;) );//NaN</div><div class="line">	    alert( parseFloat(&quot;   12.34rem&quot;) );//12.34</div></pre></td></tr></table></figure>
+<h2 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Number (需要转换的数字)</div><div class="line">从左向右看完所有的字符，如果完全符合数字的规则就转换，如果不符合数字的规则就NaN；</div></pre></td></tr></table></figure>
+<h2 id="显示类型转换"><a href="#显示类型转换" class="headerlink" title="显示类型转换"></a>显示类型转换</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">显示类型转换：</div><div class="line">	使用一些方法使数据类型发生改变</div><div class="line">	比如：Number(),parseInt(),parseFloat(),String(),Boolean()...</div></pre></td></tr></table></figure>
+<h2 id="隐式类型转换"><a href="#隐式类型转换" class="headerlink" title="隐式类型转换"></a>隐式类型转换</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">隐式类型转换：</div><div class="line">    浏览器自己进行转换，其他类型转换成数字主要调用Namber</div><div class="line">1.  当加号左右两侧有一位是字符串时，会把另一个也转换成字符串</div><div class="line">2.  使用加号时，两边没有字符串时，优先尝试吧左右两侧都转换成数字，如果不能转换成数字就转换成字符串就进行连接</div><div class="line"></div><div class="line"> alert(&quot;10&quot;-9);//1</div><div class="line"> alert( &quot;2&quot;*&quot;3&quot; );//6</div><div class="line"> alert( &quot;6&quot;/&quot;2&quot; );//3</div><div class="line"> alert( &quot;11&quot;%&quot;7&quot; );//4</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
+          
+            <a href="/tags/ECMAScript/" rel="tag"><i class="fa fa-tag"></i> ECMAScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/02/数组/" rel="next" title="数组">
+                <i class="fa fa-chevron-left"></i> 数组
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/09/弹性盒模型/" rel="prev" title="弹性盒模型">
+                弹性盒模型 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="smilemm" />
+          <p class="site-author-name" itemprop="name">smilemm</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              推荐阅读
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.uisdc.com/" title="优设" target="_blank">优设</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank">前端书籍资料</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://ife.baidu.com/" title="百度前端技术学院" target="_blank">百度前端技术学院</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wf.uisdc.com/cn/" title="google前端开发基础" target="_blank">google前端开发基础</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据"><span class="nav-number">1.</span> <span class="nav-text">数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本类型"><span class="nav-number">2.</span> <span class="nav-text">基本类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复合数据类型"><span class="nav-number">3.</span> <span class="nav-text">复合数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#typeof"><span class="nav-number">4.</span> <span class="nav-text">typeof</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型转换"><span class="nav-number">5.</span> <span class="nav-text">数据类型转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数字类型转换"><span class="nav-number">6.</span> <span class="nav-text">数字类型转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NaN"><span class="nav-number">7.</span> <span class="nav-text">NaN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#inNaN"><span class="nav-number">8.</span> <span class="nav-text">inNaN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数字类型转换成String"><span class="nav-number">9.</span> <span class="nav-text">数字类型转换成String</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数字类型转换Boolean"><span class="nav-number">10.</span> <span class="nav-text">数字类型转换Boolean</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#parseInt"><span class="nav-number">11.</span> <span class="nav-text">parseInt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#parseFloat"><span class="nav-number">12.</span> <span class="nav-text">parseFloat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Number"><span class="nav-number">13.</span> <span class="nav-text">Number</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显示类型转换"><span class="nav-number">14.</span> <span class="nav-text">显示类型转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隐式类型转换"><span class="nav-number">15.</span> <span class="nav-text">隐式类型转换</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">smilemm</span>
+</div>
+
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
